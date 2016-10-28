@@ -1,0 +1,31 @@
+{%
+  set classes = [
+    'message',
+    'pagewidth',
+    'L-center',
+  ]
+%}
+<section{{ attributes.addClass(classes).removeAttribute('id') }}>
+  <article class="message-help w-8 L-space">
+
+
+  <div class="iconsvg iconsvg-l">
+  {% include active_theme_path() ~ '/templates/component/help/icons/message-help.svg' %}
+  </div>
+
+  <div class="message-help__content">
+
+    {{ title_prefix }}
+    {% if label %}
+      <h2{{ title_attributes }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+
+    </div>
+
+  </article>
+</section>

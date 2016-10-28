@@ -1,0 +1,9 @@
+/* @TODO why is this not loaded when we call in the view ... or is it to much ;) */
+body.front .feed{
+  display: none
+}
+
+
+.feed-icon .iconsvg svg{
+  fill: orange;
+}

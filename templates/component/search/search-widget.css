@@ -1,0 +1,46 @@
+/* -- Input:search -----------------------------------------------------------*/
+.search-widget {
+}
+.search-widget input[type="search"] {
+  width: calc(100% - 6rem); /*calculate the width minus the width of the button */
+
+  -webkit-appearance: textfield;
+}
+/*.search-widget input[type="search"]::-webkit-search-cancel-button,
+.search-widget input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}*/
+.search-widget input[type="search"] {
+  display: block;
+  float: left;
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.search-widget button {
+  width: 6rem; /* width */
+  margin: 0;
+  padding: 0.4rem 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: var(--brown100);
+}
+.search-widget button:hover {
+  box-shadow: none;
+  color: var(--brown700);
+}
+
+.search-widget .button__icon svg {
+  width: 2rem;
+  height: auto;
+}
+
+/* .visually-hidden the button text */
+/*.search-widget .button__text {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}*/

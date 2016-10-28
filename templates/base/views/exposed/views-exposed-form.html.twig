@@ -1,0 +1,17 @@
+{% if q is not empty %}
+  {#
+    This ensures that, if clean URLs are off, the 'q' is added first,
+    as a hidden form element, so that it shows up first in the POST URL.
+  #}
+{{ q }}
+{% endif %}
+
+{{ attach_library(active_theme()~'/views.exposed') }}
+
+<div class="views-exposed-form__filter iconsvg iconsvg--s w-1">
+  {% include active_theme_path() ~ '/templates/base/views/exposed/icons/exposed-form-filter.svg' %}
+</div>
+
+<div class="views-exposed-form__filter w-11 L--middle L-space L@m adminwidth">
+  {{ form }}
+</div>

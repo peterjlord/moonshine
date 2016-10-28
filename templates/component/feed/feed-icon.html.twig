@@ -1,0 +1,14 @@
+{#
+
+#}
+
+{{ attach_library(active_theme()~'/feed') }}
+
+<a href="{{ url }}"{{ attributes.addClass('feed-icon') }}>
+  <div class="visually-hidden">
+    {{ 'Subscribe to @title'|t({'@title': title}) }}
+  </div>
+  <span class="iconsvg iconsvg--m">
+  {% include active_theme_path() ~ '/icons/ic_rss_feed_black_48px.svg' %}
+  </span>
+</a>

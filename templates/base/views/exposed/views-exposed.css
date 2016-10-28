@@ -1,0 +1,81 @@
+/* -- exposed form -----------------------------------------------------------*/
+.views-exposed-form {
+  border-bottom: 0.1rem solid #edf4fe;
+  border-top: 0.1rem solid #edf4fe;
+  padding:0;
+}
+.views-exposed-form:hover{
+  background-color: #f9f9f9;
+}
+
+.views-exposed-form .form-item{
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-right: 2px solid transparent;
+  background: transparent;
+}
+.views-exposed-form label{
+  color: #0080AD ;
+  font-size: 0.75rem;
+  display: block;
+  padding: 0 0 0.5rem 0;
+}
+.views-exposed-form label:hover{
+  color: #26C4FF;
+}
+
+.views-exposed-form .form-actions {
+  margin-left: 0;
+}
+
+.views-exposed-form__filter.iconsvg svg{
+  margin-top: 3rem;
+  margin-left: 1rem;
+}
+
+/* filter icon button */
+.views-exposed-form .button{
+  margin-top: 2.5rem;
+
+  background-image: url(icons/filter-button.svg), repeating-linear-gradient(to right, #0080AD 0rem, #0080AD 1.5rem, #1397CB 1.5rem, #1397CB );
+}
+.views-exposed-form .button:hover{
+  background-image: url(icons/filter-button.svg), repeating-linear-gradient(to right, #1397CB 0rem, #1397CB 1.5rem, #0080AD 1.5rem, #0080AD );
+}
+
+
+/* text input field*/
+.views-exposed-form .form-item--textfield .input{
+  padding-top: 1.5rem;
+}
+
+.views-exposed-form .input__label {
+  top: 0rem;
+  z-index: -1;
+  transition: all 0.2s ease-in-out
+}
+.views-exposed-form .input__field{
+  line-height: 1.6rem;
+  background-color: #EDF4FE;
+  color: #1397cb;
+}
+.views-exposed-form .input__field:hover{
+  background: #edf4fe;
+  cursor: pointer;
+}
+.views-exposed-form .input__field:focus + .input__label .input__label-content,
+.views-exposed-form .input--filled .input__label-content {
+	-webkit-transform: translate3d(0, 0, 0);
+	        transform: translate3d(0, 0, 0);
+          color: #1497f3;
+  /*border-bottom: 1px solid #26C4FF;*/
+}
+
+.views-exposed-form .input__label-content{
+  padding: 0
+}
+
+.input--filled .input__label {
+
+}

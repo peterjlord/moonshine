@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="16px" viewBox="0 0 24 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>exposed-form-filter</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Admin-pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="admin-table" transform="translate(-85.000000, -257.000000)" fill="#1397CB">
+            <g id="Group-2" transform="translate(43.000000, 176.000000)">
+                <path d="M51.3333333,97 L56.6666667,97 L56.6666667,94.3333333 L51.3333333,94.3333333 L51.3333333,97 L51.3333333,97 Z M42,81 L42,83.6666667 L66,83.6666667 L66,81 L42,81 L42,81 Z M46,90.3333333 L62,90.3333333 L62,87.6666667 L46,87.6666667 L46,90.3333333 L46,90.3333333 Z" id="exposed-form-filter"></path>
+            </g>
+        </g>
+    </g>
+</svg>

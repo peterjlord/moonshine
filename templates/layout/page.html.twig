@@ -1,0 +1,100 @@
+{#
+{{ base_path  }} : The base URL path of the Drupal installation.
+{{ is_front  }}  : A flag indicating if the current page is the front page.
+{{ logged_in  }} : A flag indicating if the user is registered and signed in.
+{{ is_admin  }} : A flag indicating if the user has permission to access administration pages.
+<img src="{{ active_theme_path()  }}/images/d8.png">
+#}
+
+{%
+				set main_classes = [
+    is_front ? '' : '',
+    taxonomy ? '' : '',
+    node.bundle ? 'type' ~ node.bundle|clean_class,
+   
+				]
+%}
+
+<header class="header pagewidth centered-navigation" role="banner" aria-label="{{ 'Site header'|t  }}">
+	<div class="centered-navigation-wrapper">
+  {{ page.navigation  }} 
+	</div>
+</header>
+
+
+{% if page.highlighted %}
+  <aside role="complementary">
+    {{ page.highlighted  }}
+  </aside>
+{% endif %}
+
+{% if page.featured_top %}
+  <aside role="complementary">
+    {{ page.featured_top  }}
+  </aside>
+{% endif %}
+
+<div class="pagewidth">
+  {{ page.pre_content  }}
+  {{ page.breadcrumb  }}
+</div>
+
+<main role="main" id="main">
+  <a id="main-content" tabindex="-1"></a>
+  {{ page.content  }}
+</main>
+
+{% if page.sidebar_first %}
+  <aside role="complementary">
+    {{ page.sidebar_first  }}
+  </aside>
+{% endif %}
+
+{% if page.sidebar_second %}
+  <aside role="complementary">
+    {{ page.sidebar_second  }}
+  </aside>
+{% endif %}
+
+{% if page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third %}
+  <aside role="complementary">
+    {{ page.featured_bottom_first  }}
+    {{ page.featured_bottom_second  }}
+    {{ page.featured_bottom_third  }}
+  </aside>
+{% endif %}
+<!--<div class="wrapper-for-content-outside-of-footer">
+   Uncomment this whole section for a sticky footer. The content of the page should be inside of this .wrapper-for-content-outside-of-footer
+</div>-->
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-logo">
+
+    <img src="{{ active_theme_path()}}/images/placeholder_square.png" alt="Logo image">
+  </div>
+    <ul>
+      <li><a href="javascript:void(0)">About</a></li>
+      <li><a href="javascript:void(0)">Contact</a></li>
+      <li><a href="javascript:void(0)">Products</a></li>
+    </ul>
+
+    <div class="footer-secondary-links">
+      <ul>
+        <li><a href="javascript:void(0)">Terms and Conditions</a></li>
+        <li><a href="javascript:void(0)">Privacy Policy</a></li>
+      </ul>
+
+      <ul class="footer-social">
+        <li><a href="javascript:void(0)">
+          <img src="{{ active_theme_path() }}/images/facebook-logo-circle.png" alt="Facebook">
+          </a></li>
+        <li><a href="javascript:void(0)">
+          <img src="{{ active_theme_path() }}/images/images/twitter-logo-circle.png" alt="Twitter">
+        </a></li>
+        <li><a href="javascript:void(0)">
+          <img src="{{ active_theme_path() }}/images/images/youtube-logo-circle.png" alt="YouTube">
+        </a></li>
+      </ul>
+    </div>
+</footer>
+

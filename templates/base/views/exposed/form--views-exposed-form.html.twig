@@ -1,0 +1,14 @@
+{%
+  set remove_classes = [
+    'clearfix',
+  ]
+%}
+{% set classes = [
+  'L',
+  ]
+%}
+
+{# Dont remove attribute ID will break the module installation  #}
+<form{{ attributes.removeClass(remove_classes).addclass(classes) }}>
+  {{ children }}
+</form>

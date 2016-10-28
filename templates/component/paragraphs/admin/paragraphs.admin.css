@@ -1,0 +1,50 @@
+/* the markup really need some work we work with it as is, clean up later*/
+/* pagraph element*/
+
+
+/* wrapper on the preview */
+._paragraph--view-mode--preview{
+  margin: 0.5rem 0;
+}
+/* -- wrapper when in edit mode */
+.paragraphs-subform {
+  margin: 0.5rem 0;
+  border-top: 1px solid #F9B90D;
+  border-bottom: 1px solid #F9B90D
+}
+
+table.admintable .paragraph{
+  font-size: 0.8rem;
+}
+table.admintable .paragraph p{
+  font-size: 0.8rem;
+}
+
+table.admintable .paragraph-type-top .paragraph-type-title {
+  font-weight: normal;
+  font-size: 0.8rem;
+  display: inline-block;
+  color: #ddd;
+  text-align: center;
+}
+.paragraph-type-top .paragraph__button {
+  display: inline-block;
+  float:right;
+  margin-right: 6rem;
+}
+
+
+
+/* -- buttons ----------------------------------------------------------------*/
+.js table.admintable .paragraph__button .dropbutton-multiple{
+  padding: 0;
+}
+/*.paragraph__button .button {
+  border-left-color: red;
+  background-image: url(../icons/button-add.svg), repeating-linear-gradient(to right, red 0rem, red 1.5rem, #1397cb 1.5rem, #1397cb );
+}
+.paragraph__button .button:hover,
+.paragraph__button .button:focus {
+  border-left: 0.5rem solid #0080ad;
+  background-image: url(../icons/button-add.svg), repeating-linear-gradient(to right, #1397cb 0rem, #1397cb 1.5rem, #0080ad 1.5rem, #0080ad );
+}*/

@@ -1,0 +1,79 @@
+{{ attach_library(active_theme()~'/views') }}
+
+{%
+  set classes = [
+    css_name,
+    css_class,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+    root_path =="admin" ? 'adminwidth',
+  ]
+%}
+
+<section{{ attributes.addClass(classes).removeclass('content') }}>
+  {# title - do we ever use this? #}
+  {{ title_prefix }}
+  {% if title %}
+    {{ title }}
+  {% endif %}
+  {{ title_suffix }}
+
+  {# header ok so what goes here #}
+  {% if header %}
+    {{ header }}
+  {% endif %}
+
+  {# Exposed filters #}
+  {% if exposed %}
+    {{ exposed }}
+  {% endif %}
+
+  {% if attachment_before %}
+  attached
+    {{ attachment_before }}
+  {% endif %}
+
+  {# views content is rows ;) #}
+  {% if rows %}
+    {{ rows }}
+  {% elseif empty %}
+  {# empty #}
+    {{ empty }}
+  </div>
+  {% endif %}
+
+  {# pager #}
+  {% if pager %}
+    {{ pager }}
+  {% endif %}
+
+  {# attacment post #}
+  {% if attachment_after %}
+    {{ attachment_after }}
+  {% endif %}
+
+  {#  more #}
+  {% if more %}
+    {{ more }}
+  {% endif %}
+
+  {# footer #}
+  {% if footer %}
+    {{ footer }}
+  {% endif %}
+
+  {# RSS FTW! were a ignoring the tempate feed-icon cause we dont need that #}
+  {% if feed_icons %}
+    <div class="feed L-right pagewidth">
+      <a href="{{ feed_icons[0]['#url'] }}"{{ attributes.addClass('feed-link').removeClass('taxonomy-term') }}
+      data-balloon="{{ 'Subscribe @title'|t({'@title': feed_icons[0]['#title']}) }}"
+      data-balloon-pos="up"
+      >
+        <span class="iconsvg iconsvg--s">
+          {#{% include active_theme_path() ~ '/icons/ic_rss_feed_black_48px.svg' %}#}
+        </span>
+        <span class="visually-hidden">{{ 'Subscribe @title'|t({'@title': feed_icons[0]['#title']}) }}</span>
+      </a>
+    </div>
+
+  {% endif %}
+</section>

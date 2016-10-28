@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>button-wrench</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Admin-pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="admin-table" transform="translate(-443.000000, -332.000000)" fill="#FDFDFD">
+            <g id="Group-2" transform="translate(43.000000, 176.000000)">
+                <g id="Content-filter-action" transform="translate(95.000000, 148.000000)">
+                    <g id="btn-/-Save-3" transform="translate(296.000000, 1.000000)">
+                        <path d="M24.781693,20.0528561 L18.123331,13.394494 C18.7782518,11.7208074 18.4144069,9.71966033 17.0681807,8.37343411 C15.612801,6.91805442 13.4297315,6.62697849 11.6832758,7.46382181 L14.8487267,10.6292726 L12.6292726,12.8487267 L9.46382181,9.68327584 C8.62697849,11.4297315 8.91805442,13.612801 10.3734341,15.0681807 C11.7196603,16.4144069 13.7208074,16.7782518 15.394494,16.123331 L22.0528561,22.781693 C22.3439321,23.072769 22.8169305,23.072769 23.0716219,22.781693 L24.781693,21.0716219 C25.072769,20.8169305 25.072769,20.3439321 24.781693,20.0528561 L24.781693,20.0528561 Z" id="button-wrench"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

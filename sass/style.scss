@@ -1,0 +1,41 @@
+@import "bourbon";
+@import "neat";
+//@import "base/base";
+
+$base-border-radius: 3px !default;
+$dark-gray: #333 !default;
+$large-screen: 53.75em !default;
+$base-font-color: $dark-gray !default;
+$centered-navigation-padding: 1em;
+$centered-navigation-logo-height: 2em;
+$centered-navigation-background: #E7F1EC;
+$centered-navigation-color: transparentize($base-font-color, 0.3);
+$centered-navigation-color-hover: $base-font-color;
+$centered-navigation-height: 60px;
+$centered-navigation-item-padding: 1em;
+$centered-navigation-submenu-padding: 1em;
+$centered-navigation-submenu-width: 12em;
+$centered-navigation-item-nudge: 2.2em;
+$horizontal-bar-mode: $large-screen;
+
+$base-border-color: gainsboro !default;
+$base-border-radius: 3px !default;
+$base-spacing: 1.5em !default;
+$action-color: #477DCA !default;
+$dark-gray: #333 !default;
+$large-screen: 53.75em !default;
+$base-font-color: $dark-gray !default;
+$pagination-border-color: $base-border-color;
+$pagination-border: 1px solid $pagination-border-color;
+$pagination-background: lighten($pagination-border-color, 10);
+$pagination-hover-background: lighten($pagination-background, 5);
+$pagination-color: $base-font-color;
+
+
+@import "core/**/*";
+@import "components/**/*";
+
+footer {
+	@include outer-container(100%);
+	background:red;
+}

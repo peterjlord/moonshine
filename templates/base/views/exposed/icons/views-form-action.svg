@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>views-form-action</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Admin-pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="admin-table" transform="translate(-93.000000, -332.000000)" fill="#C24F78">
+            <g id="Group-2" transform="translate(43.000000, 176.000000)">
+                <path d="M65.781693,169.052856 L59.123331,162.394494 C59.7782518,160.720807 59.4144069,158.71966 58.0681807,157.373434 C56.612801,155.918054 54.4297315,155.626978 52.6832758,156.463822 L55.8487267,159.629273 L53.6292726,161.848727 L50.4638218,158.683276 C49.6269785,160.429731 49.9180544,162.612801 51.3734341,164.068181 C52.7196603,165.414407 54.7208074,165.778252 56.394494,165.123331 L63.0528561,171.781693 C63.3439321,172.072769 63.8169305,172.072769 64.0716219,171.781693 L65.781693,170.071622 C66.072769,169.81693 66.072769,169.343932 65.781693,169.052856 L65.781693,169.052856 Z" id="views-form-action"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,23 @@
+name: Moonshine
+type: theme
+description: Theme utilizing bourbon sass lib
+package: Other
+core: 8.x
+libraries:
+  - moonshine/global-styling
+
+base theme: classy
+#Using Classy as a base theme https://www.drupal.org/theme-guide/8/classy
+
+# -- regions -------------------------------------------------------------------
+regions:
+  navigation: 'Navigation'
+  branding: 'Branding'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  content: 'Content'
+  sidebar_first: 'Primary'
+  sidebar_second: 'Secondary'
+  footer: 'Footer'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'

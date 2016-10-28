@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Theme override for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ */
+ {{ title_prefix }}
+ {{ title_suffix }}
+#}
+
+{{ attach_library(active_theme()~'/logo') }}
+
+<div class="branding center-middle">
+
+
+  {% if site_logo %}
+    <a class="branding__logo bounce-hover" href="{{ path('<front>') }}" title="{{site_name}} {{ site_slogan }}" rel="home"
+       data-balloon="{{ site_name}} | {{ site_slogan}}"  data-balloon-pos="right">
+      <span class="branding__icon iconsvg iconsvg--l">
+
+        {% if '.svg' in site_logo %}
+         {% include site_logo %}
+        {% else %}
+          <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
+        {% endif %}
+
+      </span>
+    </a>
+  {% endif %}
+
+  {% if site_name %}
+    <a class="branding__title" href="{{ path('<front>') }}" title="{{ site_slogan }}" rel="home"
+       data-balloon="{{ site_name}} {{ site_slogan}}"  data-balloon-pos="right"
+    >
+      <span class="branding__sitename">{{ site_name }}</span>
+      <span class="branding__slogan">{{ site_slogan }}</span>
+    </a>
+  {% endif %}
+</div>

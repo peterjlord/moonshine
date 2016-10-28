@@ -1,0 +1,21 @@
+/* breadcrumb */
+.breadcrumb {
+  padding: 0;
+  font-size: 1rem;
+}
+.breadcrumb li {
+  display: inline-block;
+  padding-right:0.5rem;
+}
+.breadcrumb li a {
+  display: inline-block;
+  color: #347c98;
+}
+.breadcrumb li:first-child a:before {
+  content: "";
+}
+.breadcrumb li a:before {
+  padding-right: 0.5rem;
+  content: "/";
+  color:black;
+}
