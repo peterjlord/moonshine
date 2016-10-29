@@ -1,4 +1,4 @@
-@each $message, $color in $message {
+@each $message, $color in $messages {
   .messages--#{$message} {
     background-color: $color;
     color: shade($color, 60%);
