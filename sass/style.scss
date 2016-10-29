@@ -31,6 +31,14 @@ $pagination-background: lighten($pagination-border-color, 10);
 $pagination-hover-background: lighten($pagination-background, 5);
 $pagination-color: $base-font-color;
 
+$base-spacing: 1.5em !default;
+$messages: (
+  "warning": #fff6bf,
+  "error": #fbe3e4,
+  "status": #e6efc2,
+) !default;
+
+
 
 @import "core/**/*";
 @import "components/**/*";
