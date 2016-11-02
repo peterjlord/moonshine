@@ -15,12 +15,12 @@
 				]
 %}
 
+<div class="container">
 <header class="header pagewidth centered-navigation" role="banner" aria-label="{{ 'Site header'|t  }}">
 	<div class="centered-navigation-wrapper">
   {{ page.navigation  }} 
 	</div>
 </header>
-
 
 {% if page.highlighted %}
   <aside role="complementary">
@@ -39,7 +39,7 @@
   {{ page.breadcrumb  }}
 </div>
 
-<main role="main" id="main">
+<main class="pagewidth" role="main" id="main">
   <a id="main-content" tabindex="-1"></a>
   {{ page.content  }}
 </main>
@@ -56,45 +56,26 @@
   </aside>
 {% endif %}
 
-{% if page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third %}
-  <aside role="complementary">
-    {{ page.featured_bottom_first  }}
-    {{ page.featured_bottom_second  }}
-    {{ page.featured_bottom_third  }}
-  </aside>
-{% endif %}
-<!--<div class="wrapper-for-content-outside-of-footer">
-   Uncomment this whole section for a sticky footer. The content of the page should be inside of this .wrapper-for-content-outside-of-footer
-</div>-->
-
-<footer class="footer" role="contentinfo">
-  <div class="footer-logo">
-
-    <img src="{{ active_theme_path()}}/images/placeholder_square.png" alt="Logo image">
-  </div>
-    <ul>
-      <li><a href="javascript:void(0)">About</a></li>
-      <li><a href="javascript:void(0)">Contact</a></li>
-      <li><a href="javascript:void(0)">Products</a></li>
-    </ul>
-
-    <div class="footer-secondary-links">
-      <ul>
-        <li><a href="javascript:void(0)">Terms and Conditions</a></li>
-        <li><a href="javascript:void(0)">Privacy Policy</a></li>
-      </ul>
-
-      <ul class="footer-social">
-        <li><a href="javascript:void(0)">
-          <img src="{{ active_theme_path() }}/images/facebook-logo-circle.png" alt="Facebook">
-          </a></li>
-        <li><a href="javascript:void(0)">
-          <img src="{{ active_theme_path() }}/images/images/twitter-logo-circle.png" alt="Twitter">
-        </a></li>
-        <li><a href="javascript:void(0)">
-          <img src="{{ active_theme_path() }}/images/images/youtube-logo-circle.png" alt="YouTube">
-        </a></li>
-      </ul>
-    </div>
+<footer class="footer pagewidth" role="contentinfo">
+	{% if page.footer_top %}
+	<aside class="footer-top">
+	{{ page.footer_top }}
+	</aside>
+	{% endif %}
+	{% if page.footer_left %}
+	<aside class="footer-left">
+	{{ page.footer_left }}
+	</aside>
+	{% endif %}
+	{% if page.footer_right %}
+	<aside class="footer-right">
+	{{ page.footer_right }}
+	</aside>
+	{% endif %}
+	{% if page.footer_bottom %}
+	<aside class="footer-bottom">
+	{{ page.footer_bottom }}
+	</aside>
+	{% endif %}
 </footer>
-
+</div>
