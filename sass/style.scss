@@ -62,39 +62,6 @@ $dkblue: #41A8DF;
 $dkerblue: #298EC3;
 $textblue: #072f44;
 
-
-
-
-
-
-body {
-	color: $textblue;
-  line-height: $body-line-height;
-}
-//min-width:50em
-section div {
-	background-color: #AADBF5;
-	font-size: 0.8em;
-}
-.zero {
-	div {
-  //@include span-columns(6);
-  height: 10em;
-	}
-}
-section {
-  text-align: center;
-	background-color: #D5EEFB;
-	& > code  {
-    display: block;
-	}
-	&.zero {
-		div {
-    	//@include span-columns(6);
-    	height: 10em;
-		}
-	}
-}
 // Enter Neat
 .pagewidth {
   @include outer-container;
