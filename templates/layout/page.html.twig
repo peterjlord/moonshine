@@ -14,14 +14,12 @@
    
 				]
 %}
-
 <div class="container">
 <header class="header pagewidth centered-navigation" role="banner" aria-label="{{ 'Site header'|t  }}">
 	<div class="centered-navigation-wrapper">
   {{ page.navigation  }} 
 	</div>
 </header>
-
 {% if page.highlighted %}
   <aside role="complementary">
     {{ page.highlighted  }}
@@ -40,6 +38,18 @@
 </div>
 
 <main class="pagewidth" role="main" id="main">
+<svg role="img" class="database">
+  <use xlink:href="#database"></use>
+</svg>
+<svg role="img" class="codepen">
+  <use xlink:href="#codepen"></use>
+</svg>
+<svg role="img" class="reddit">
+  <use xlink:href="#reddit"></use>
+</svg>
+<svg role="img" class="skype">
+  <use xlink:href="#skype"></use>
+</svg>
   <a id="main-content" tabindex="-1"></a>
   {{ page.content  }}
 </main>
