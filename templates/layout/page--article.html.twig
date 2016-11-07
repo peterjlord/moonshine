@@ -1,0 +1,95 @@
+{#
+{{ base_path  }} : The base URL path of the Drupal installation.
+{{ is_front  }}  : A flag indicating if the current page is the front page.
+{{ logged_in  }} : A flag indicating if the user is registered and signed in.
+{{ is_admin  }} : A flag indicating if the user has permission to access administration pages.
+<img src="{{ active_theme_path()  }}/images/d8.png">
+#}
+
+{%
+				set main_classes = [
+    is_front ? '' : '',
+    taxonomy ? '' : '',
+    node.bundle ? 'type' ~ node.bundle|clean_class,
+   
+				]
+%}
+<div class="container">
+<header class="header pagewidth centered-navigation" role="banner" aria-label="{{ 'Site header'|t  }}">
+	<div class="centered-navigation-wrapper">
+  {{ page.navigation  }} 
+	</div>
+</header>
+<div class="main-content">
+{% if field_image %}
+	<div class="article-header article-header-image"
+       style="background-image:url( {{field_image}})">
+    <div class="container pagewidth">
+          <h1>{{ title }}</h1>
+    </div>
+  </div>
+
+{% endif %}
+	
+{% if page.highlighted %}
+  <aside role="complementary">
+    {{ page.highlighted  }}
+  </aside>
+{% endif %}
+
+
+
+{% if page.featured_top %}
+  <aside role="complementary">
+    {{ page.featured_top  }}
+  </aside>
+{% endif %}
+
+<div class="pagewidth">
+  {{ page.pre_content  }}
+  {{ page.breadcrumb  }}
+</div>
+
+<main class="pagewidth" role="main" id="main">
+  <a id="main-content" tabindex="-1"></a>
+  {{ page.content  }}
+</main>
+
+{% if page.sidebar_first %}
+  <aside role="complementary">
+    {{ page.sidebar_first  }}
+  </aside>
+{% endif %}
+
+{% if page.sidebar_second %}
+  <aside role="complementary">
+    {{ page.sidebar_second  }}
+  </aside>
+{% endif %}
+</div>
+<footer class="footer pagewidth" role="contentinfo">
+	<svg role="img" class="facebook">
+  <use xlink:href="#facebook"></use>
+</svg>
+	{% if page.footer_top %}
+	<aside class="footer-top">
+	{{ page.footer_top }}
+	</aside>
+	{% endif %}
+	{% if page.footer_left %}
+	<aside class="footer-left">
+	{{ page.footer_left }}
+	</aside>
+	{% endif %}
+	{% if page.footer_right %}
+	<aside class="footer-right">
+	{{ page.footer_right }}
+	</aside>
+	{% endif %}
+	{% if page.footer_bottom %}
+	<aside class="footer-bottom">
+	{{ page.footer_bottom }}
+	</aside>
+	{% endif %}
+</footer>
+</div>

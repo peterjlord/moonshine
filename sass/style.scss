@@ -1,6 +1,6 @@
 @import "bourbon/bourbon";
 
-$visual-grid: true !default;
+$visual-grid: false !default;
 $visual-grid-color: yellow;
 $visual-grid-index: front;
 $visual-grid-opacity: 0.3;
@@ -87,4 +87,3 @@ footer aside.footer-bottom {
 	@include clearfix;
 }
 
-// And the result is...
