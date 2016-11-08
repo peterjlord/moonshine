@@ -166,3 +166,11 @@ function moonshine_preprocess_menu_local_task(array &$variables) {
  */
 function moonshine_preprocess_menu(&$variables) {
 }
+function moonshine_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+	//ksm($form_id);
+}
+
+function moonshine_form_search_block_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+	$form['actions']['submit']['#type'] =  'image_button';
+	$form['actions']['submit']['#src'] =  drupal_get_path('theme', 'moonshine') . '/images/svg-inuse/135-search.svg'; 
+}
