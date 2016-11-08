@@ -55,6 +55,13 @@
 	}
 }
 // Search Navigation
+.search-expanded {
+	.search-block-form {
+		input[type="search"] {
+  		display: inline;
+		}
+	}
+}
 .search-block-form {
   position: relative;
   text-align: right;
