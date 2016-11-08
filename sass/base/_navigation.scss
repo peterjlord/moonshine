@@ -54,62 +54,34 @@
 		}
 	}
 }
-
-	/*
+// Search Navigation
 .search-block-form {
   position: relative;
   text-align: right;
-  z-index: 1;
-	display:none;
-  line-height: 60px;
+  z-index: 4;
+  line-height: $navigation-height;
   form {
+		line-height:$navigation-height;
+		height:60px;
     position: absolute;
     right: 60px;
   }
   input[type="search"] {
     border: none;
     border-radius: 3px;
-    display: none;
+    outline: 0;
+    padding: .5em .75em;
+		display:none;
+    //width: 100%;
+    border-radius: 3px;
     outline: 0;
   }
   input[type="image"] {
     margin: 0.333333em 0.75em;
-    width: 32px;
-    height: 60px;
+		height:$navigation-height;
+    width:$navigation-height;
     border:0px;
+		line-height: $navigation-height;
     vertical-align: middle;
   }
 }
-.usermenu {
-  float:right;
-  overflow:visible;
-  .button {
-    display: block;
-    margin-right: -.5em;
-    padding: 0 .5em;
-    position: relative;
-    height:em(60px);
-    line-height: em(60px);
-    width: em(60px);
-  }
-  svg {
-		margin: 0.333333em 0.75em;
-    width: 32px;
-    height: 60px;
-    border:0px;
-    vertical-align: middle;
-  }
-	ul ul {
-		position:	absolute;
-		top:60px;
-		left:0px;
-		z-index:2;
-		li {
-			display:block;
-		}
-	}
-}
-*/
-
-
-
