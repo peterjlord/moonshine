@@ -17,6 +17,11 @@
 <div class="container">
 <header class="header pagewidth centered-navigation" role="banner" aria-label="{{ 'Site header'|t  }}">
 	<div class="centered-navigation-wrapper">
+	<div class="menu-nav">
+		<a id="nav-open-button" class="nav-button" href="#block-system-main-menu">
+			<svg role="img" class="hmenu"><use xlink:href="#hmenu"></use></svg>
+		</a>
+  </div>
   {{ page.navigation  }} 
 	</div>
 </header>
@@ -55,9 +60,7 @@
 {% endif %}
 
 <footer class="footer pagewidth" role="contentinfo">
-	<svg role="img" class="facebook">
-  <use xlink:href="#facebook"></use>
-</svg>
+	<svg role="img" class="facebook"><use xlink:href="#facebook"></use></svg>
 	{% if page.footer_top %}
 	<aside class="footer-top">
 	{{ page.footer_top }}

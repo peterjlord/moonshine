@@ -24,45 +24,36 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
+<ul class="menu">
+	<li class="menu-item button">
+	<a href=""><svg role="img" class="avatar"><use xlink:href="#avatar"></use></svg>
+</a>	
 {{ menus.menu_links(items, attributes, 0) }}
-
+	</li>
+</ul>
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('centered-navigation-menu show') }}>
-			{% set half = items|length/2%}
-			{% set half = half|round %}
+      <ul{{ attributes.addClass('menu') }}>
     {% else %}
-      <ul class="submenu">
+      <ul class="menu">
     {% endif %}
-		
-		{% set i = 0 %}
-
     {% for item in items %}
       {%
         set classes = [
-          'nav-link',
-          item.is_expanded ? 'more',
+          'menu-item',
+          item.is_expanded ? 'menu-item--expanded',
           item.is_collapsed ? 'menu-item--collapsed',
           item.in_active_trail ? 'menu-item--active-trail',
         ]
       %}
-    	{% if menu_level == 0 and i == half %}
-			<li class="nav-link logo">
-          <a href="javascript:void(0)" class="logo">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="Logo image">
-          </a>
-      </li>
-
-			{% endif %}
       <li{{ item.attributes.addClass(classes) }}>
         {{ link(item.title, item.url) }}
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}
       </li>
-		{% set i = i + 1 %}
     {% endfor %}
     </ul>
   {% endif %}
