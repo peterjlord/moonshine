@@ -1,2 +1,50 @@
-.centered-navigation {
+header.header{
+	background:$primary;
+	li {
+	}
+	a {
+		color:$white;
+	}
 }
+.search-block-form form {
+	display:none!important;
+}
+.menu--account  li {
+	.avatar {
+		border:solid $white 4px;
+		path {
+  		fill: $white;
+		}
+	}
+	&:hover {
+		.avatar {
+    	border:solid $primary 4px;
+			path {
+  			fill: $primary;
+			}
+		}
+		background:$white;
+	}
+}
+// Submenus 
+.menu--account, .menu--main {
+	li {
+		&:hover {
+			background:$white;
+			a {
+				color:$primary;
+			}
+		}
+		&:hover ul {
+			@include display(flex);
+  	 @include flex-direction(column);
+			box-shadow: 0 4px 4px rgba(0,0,0,0.4);
+			z-index:2;
+		
+			a {
+				color:$primary
+			}	
+		}
+	}
+}
+

@@ -1,0 +1,22 @@
+////////////////////////////////////////// Basic Layout Footer
+footer aside {
+  padding:1em;
+}
+footer aside.footer-top {
+}
+footer aside.footer-left {
+  @include media(50em) {
+    @include span-columns(6);
+  }
+}
+footer aside.footer-right {
+  @include media(50em) {
+    @include span-columns(6);
+    @include omega();
+  }
+}
+footer aside.footer-bottom {
+  clear:both;
+  @include clearfix;
+}
+

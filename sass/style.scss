@@ -20,7 +20,6 @@ $centered-navigation-logo-height: 2em;
 $centered-navigation-background: #E7F1EC;
 $centered-navigation-color: transparentize($base-font-color, 0.3);
 $centered-navigation-color-hover: $base-font-color;
-$centered-navigation-height: 60px;
 $centered-navigation-item-padding: 1em;
 $centered-navigation-submenu-padding: 1em;
 $centered-navigation-submenu-width: 12em;
@@ -39,6 +38,9 @@ $pagination-border: 1px solid $pagination-border-color;
 $pagination-background: lighten($pagination-border-color, 10);
 $pagination-hover-background: lighten($pagination-background, 5);
 $pagination-color: $base-font-color;
+$primary:#00a94f;
+$white:#ffffff;
+$navigation-height: 50px;
 
 $base-spacing: 1.5em !default;
 $messages: (
@@ -51,102 +53,16 @@ $messages: (
 @import "neat";
 @import "variables";
 @import "core/**/*";
+@import "base/**/*";
 @import "components/**/*";
 
-@import "typography";
 @import "reset";
-a {
-	text-decoration:none;
-}
-
+@import "typography";
 
 
 // Enter Neat
 .menu-nav {
 	display:none;
 }
-.menu--main {
-	float:left;
-	li {
-		display:inline-block;
-		
-	}
-	a {
-		display: block;
-		margin: 0.333333em 0.75em;
-		line-height: 60px;
-	}
-	ul ul {
-		display:none;
-	}
-}
-.search-block-form {
-	position: relative;
-  text-align: right;
-  z-index: 1;
-	form {
-		position: absolute;
-    right: 60px;
-	}
 
-	line-height: 60px;
-	input[type="search"] {
-    border: none;
-    border-radius: 3px;
-    display: none;
-    outline: 0;
-	}
-	input[type="submit"] {
-    margin: 0.333333em 0.75em;
-    width: 32px;
-    height: 60px;
-		border:0px;
-    vertical-align: middle;
-	}
-}
-.usermenu {
-	float:right;
-	overflow:visible;
-	.button {
-		display: block;
-		margin-right: -.5em;
-		padding: 0 .5em;
-		position: relative;
-		height:60px;
-		line-height:60px;
-		width: 60px;
-	}
-	svg {
-		max-width: 40px;
-max-height: 40px;
-vertical-align: middle;
-	}
-	ul ul {
-		display:none;
-	}
-}
-
-
-
-////////////////////////////////////////// Basic Layout Footer
-footer aside {
-	padding:1em;
-}
-footer aside.footer-top {
-}
-footer aside.footer-left {
-	@include media(50em) {
-  	@include span-columns(6);
-	}
-}
-footer aside.footer-right {
-	@include media(50em) {
-  	@include span-columns(6);
-		@include omega();
-	}
-}
-footer aside.footer-bottom {
-	clear:both;
-	@include clearfix;
-}
 

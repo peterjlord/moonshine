@@ -5,3 +5,4 @@ global-styling:
       images/svg-symbols.css: {}
   js:
     js/script.js: {}
+

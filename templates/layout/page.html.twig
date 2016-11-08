@@ -14,9 +14,8 @@
    
 				]
 %}
-<div class="container">
-<header class="header pagewidth centered-navigation" role="banner" aria-label="{{ 'Site header'|t  }}">
-	<div class="centered-navigation-wrapper">
+<header class="header centered-navigation" role="banner" aria-label="{{ 'Site header'|t  }}">
+	<div class="pagewidth centered-navigation-wrapper">
 	<div class="menu-nav">
 		<a id="nav-open-button" class="nav-button" href="#block-system-main-menu">
 			<svg role="img" class="hmenu"><use xlink:href="#hmenu"></use></svg>
@@ -25,6 +24,7 @@
   {{ page.navigation  }} 
 	</div>
 </header>
+<div class="container">
 {% if page.highlighted %}
   <aside role="complementary">
     {{ page.highlighted  }}
