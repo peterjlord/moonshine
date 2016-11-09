@@ -25,25 +25,23 @@ gulp.task('clearcache', function() {
 
 gulp.task('icons', function () {
 	return gulp.src('./images/svg-inuse/*.svg')
-	.pipe(svgSymbols({
-		svgClassname: 'svg-icon-lib',
-		title: '%f Icon',
-		slug: function (name) {
-    	return name.replace(/-/g, '').replace(/[0-9]/g, '');
-		},
-		transformData: function(svg, defaultData, options) {
-		return {
-    // Return every datas you need 
-    id:         defaultData.id,
-    className:  defaultData.className,
-    width:      32 + 'px',
-    height:     32 + 'px'
-  
-		};
-		}
+		.pipe(svgSymbols({
+			svgClassname: 'svg-icon-lib',
+			title: '%f Icon',
+			slug: function (name) {
+    		return name.replace(/-/g, '').replace(/[0-9]/g, '');
+			},
+			transformData: function(svg, defaultData, options) {
+				return {
+    			// Return every datas you need 
+    			id:         defaultData.id,
+    			className:  defaultData.className,
+    			width:      32 + 'px',
+    			height:     32 + 'px'
+				};
+			}
 	}))
   .pipe(gulp.dest('./images/'));
-
 });
 
 gulp.task('watch', function () {
