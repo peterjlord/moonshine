@@ -4,5 +4,5 @@ global-styling:
       css/style.css: {}
       images/svg-symbols.css: {}
   js:
-    js/script.js: {}
+    js/jquery.searchbox.js: {}
 
