@@ -4,3 +4,11 @@ moonshine_breadcrumb: 1
 moonshine_breadcrumb_home: 1
 moonshine_breadcrumb_title: 1
 moonshine_breadcrumb_text: 'You are here : '
+
+moonshine_social:
+  facebook: peterjlord
+  twitter: peterjlord
+  google: 'google'
+  linkedIn: 'll'
+  reddit: 'peterlord'
+  youtube: ''
