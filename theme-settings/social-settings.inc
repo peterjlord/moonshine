@@ -1,5 +1,12 @@
 <?php
 function moonshine_form_settings_social(&$form, $theme) {
+	$social = _moonshine_setting('social', $theme);
+
+	$settings['theme'] = $theme;
+  $settings['social'] = $social;
+  $settings['parent'] = 'moonshine_social';
+
+
 	$form['social'] = array(
     '#type' => 'details',
     '#title' => t('Social'),
@@ -50,5 +57,6 @@ function moonshine_form_theme_social_link(&$form, $settings) {
     '#parents' => array( $settings['parent'], $camelCaseLink ),
     '#default_value' => $socialLink,
   );
+	//ksm($form);
 }
                                                                                         
