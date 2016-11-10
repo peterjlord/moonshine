@@ -18,7 +18,7 @@
 			} 
 		}).find('input').blur(function () {
 			setTimeout(function () {
-        var trigger = document.querySelector('header.centered-navigation .search-expanded');
+        var trigger = document.querySelector('header.centered-navigation.search-expanded');
 				if (trigger !== null && !trigger.querySelector('#search-block-form').contains(document.activeElement)) {
           trigger.classList.remove('search-expanded');
 				}

@@ -1,5 +1,11 @@
 <?php
 
+	use Drupal\Core\Url;
+	use Drupal\Core\Template\Attribute;
+
+	include_once(drupal_get_path('theme', 'moonshine') . '/includes/functions.inc');
+
+
 /**
  * @file
  * Functions to support theming in the moonshine theme.
@@ -18,6 +24,9 @@ function moonshine_preprocess_html(array &$variables) {
   /*if (isset($variables['head_title_array']['title']) && isset($variables['head_title_array']['name']) && ($variables['head_title_array']['title'] == $variables['head_title_array']['name'])) {
     $variables['head_title'] = $variables['head_title_array']['name'];
   }*/
+}
+function moonshine_preprocess(array &$variables, $hook) {
+
 }
 
 /**
@@ -41,6 +50,7 @@ function moonshine_page_attachments_alter(array &$page) {
  */
 function moonshine_preprocess_page(array &$variables) {
 	if (isset($variables['node'])) {
+		/*
     $node = $variables['node'];
 		if ($node->__isset('field_image')) {
       $field_image = $node->get('field_image');
@@ -50,6 +60,7 @@ function moonshine_preprocess_page(array &$variables) {
 			$variables['field_image'] = $url; 
 			$variables['title'] = $node->title->view();
 		}
+		*/
   }
 }
 
@@ -61,6 +72,34 @@ function moonshine_theme_suggestions_page_alter(array &$suggestions, array $vari
     $content_type = $node->bundle();
     $suggestions[] = 'page__'.$content_type;
 	}
+}
+function moonshine_preprocess_breadcrumb(&$variables){
+	$breadcrumb = &$variables['breadcrumb'];
+  // Optionally get rid of the homepage link.
+  $show_breadcrumb_home = _moonshine_setting('breadcrumb_home');
+  if (!$show_breadcrumb_home) {
+    array_shift($breadcrumb);
+  }
+  else {
+    $variables['attributes']['class'][] = "breadcrumb-with-home";
+  }
+
+  // Add the 'you are here'.
+  $variables['breadcrumb_text'] = _moonshine_setting('breadcrumb_text');
+	
+  if (_moonshine_setting('breadcrumb_title') && !empty($breadcrumb)) {
+    $request = \Drupal::request();
+    $route_match = \Drupal::routeMatch();
+    $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+
+    if (!empty($page_title)) {
+      $variables['attributes']['class'][] = "breadcrumb-with-title";
+      $breadcrumb[] = array(
+        'text' => $page_title,
+        'attributes' => new Attribute(array('class' => array('active'))),
+      );
+    }
+  }
 }
 
 /**

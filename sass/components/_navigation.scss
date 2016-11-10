@@ -7,6 +7,8 @@ header.header{
 	}
 }
 .search-block-form form {
+	.form-type-search {
+	}
 	input[type="image"] {
 	}
 }
@@ -38,7 +40,7 @@ header.header{
 		}
 		&:hover ul {
 			@include display(flex);
-  	 @include flex-direction(column);
+  	 	@include flex-direction(column);
 			box-shadow: 0 4px 4px rgba(0,0,0,0.4);
 			z-index:2;
 		
@@ -47,5 +49,9 @@ header.header{
 			}	
 		}
 	}
+}
+.search-expanded {
+	opacity: .9;
+  transition: opacity .3s;
 }
 
