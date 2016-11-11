@@ -12,5 +12,6 @@ function moonshine_form_settings_reset(&$form, $theme) {
   $form['general']['#group'] = 'core';
   $form['components']['#group'] = 'core';
   $form['social']['#group'] = 'core';
+  $form['develop']['#group'] = 'core';
 
 }

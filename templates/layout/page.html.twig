@@ -83,8 +83,12 @@
 	{% endif %}
 </footer>
 </div>
+{% if display_grid %}
+	TEST
+   {{ attach_library('moonshine/display-grid')}}
+{% endif %}
 {% if back_to_top %}
-   {{ attach_library('moonshine/back-to-top')    }}
+   {{ attach_library('moonshine/back-to-top') }}
   <a id="back-to-top" class="icon-circle-up large" href="{{back_to_top}}"><span class="hidden">{{ 'Back To Top'|t   }}</span></a>
 {% endif %}
 

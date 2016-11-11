@@ -13,11 +13,13 @@ function moonshine_form_system_theme_settings_alter(&$form, FormStateInterface $
 	include_once(drupal_get_path('theme', $theme) . '/theme-settings/general-settings.inc');
 	include_once(drupal_get_path('theme', $theme) . '/theme-settings/component-settings.inc');
 	include_once(drupal_get_path('theme', $theme) . '/theme-settings/social-settings.inc');
+	include_once(drupal_get_path('theme', $theme) . '/theme-settings/develop-settings.inc');
 	include_once(drupal_get_path('theme', $theme) . '/theme-settings/reset.inc');
 
 	moonshine_form_settings_general($form, $theme);
 	moonshine_form_settings_components($form, $theme);
 	moonshine_form_settings_social($form, $theme);
+	moonshine_form_settings_develop($form, $theme);
 	moonshine_form_settings_reset($form, $theme);
 
 }

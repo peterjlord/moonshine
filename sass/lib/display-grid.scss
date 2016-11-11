@@ -1,0 +1,13 @@
+@import "bourbon/bourbon";
+
+$visual-grid: true!default;
+$visual-grid-color: yellow;
+$visual-grid-index: front;
+$visual-grid-opacity: 0.3;
+
+$grid-columns: 12 !default;
+
+@import "neat";
+@import "variables";
+
+

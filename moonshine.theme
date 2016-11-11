@@ -54,6 +54,7 @@ function moonshine_preprocess_page(array &$variables) {
 	$theme = \Drupal::theme()->getActiveTheme()->getName();
 
 	moonshine_backtotop($variables, $theme);
+	moonshine_display_grid($variables, $theme);
 	if (isset($variables['node'])) {
 		/*
     $node = $variables['node'];
@@ -223,5 +224,12 @@ function moonshine_backtotop(&$variables, $theme) {
 	if(_moonshine_setting('back_to_top', $theme)) {
     $variables['back_to_top'] = Url::fromRoute('<current>', array(), array('absolute' => TRUE, 'fragment'=> 'header-top'))->toString();
 	}
+}
+function moonshine_display_grid(&$variables, $theme) {
+  $display_grid = _moonshine_setting('display_grid', $theme);
+	if(_moonshine_setting('display_grid', $theme)) {
+		$variables['display_grid'] = TRUE;
+	}	
+
 }
 

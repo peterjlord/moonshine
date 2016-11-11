@@ -14,3 +14,7 @@ back-to-top:
       css/lib/back-to-top.css: {}
 
 
+display-grid:
+  css:
+    theme:
+      css/lib/display-grid.css: {}
