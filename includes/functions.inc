@@ -26,6 +26,9 @@ function _moonshine_setting($name, $theme = NULL, $prefix = 'moonshine') {
   $setting = theme_get_setting($prefix . $name, $theme);
   return $setting;
 }
+function _ms_setting($name, $theme = NULL, $prefix = 'moonshine') {
+	return _moonshine_setting($name, $theme );
+}
 
 function _moonshine_camelcase($str, $noStrip =[]) {
   // non-alpha and non-numeric characters become spaces
