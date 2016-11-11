@@ -58,33 +58,66 @@
     {{ page.sidebar_second  }}
   </aside>
 {% endif %}
+ {% if page.footer_top or page.footer_one or page.footer_two or page.footer_three or page.footer_menus %}
+    <footer role="contentinfo">
+     
+      {% if page.footer_top %}
+      <div id="footer-top" {{ footer_top_style  }}>
+      <div class="container {{ set_max_site_width ? maximum_width_footer }}">
+        {{ page.footer_top  }}
+      </div>
+      </div>
+      {% endif %}
 
-<footer class="footer pagewidth" role="contentinfo">
-	<svg role="img" class="facebook"><use xlink:href="#facebook"></use></svg>
-	{% if page.footer_top %}
-	<aside class="footer-top">
-	{{ page.footer_top }}
-	</aside>
-	{% endif %}
-	{% if page.footer_left %}
-	<aside class="footer-left">
-	{{ page.footer_left }}
-	</aside>
-	{% endif %}
-	{% if page.footer_right %}
-	<aside class="footer-right">
-	{{ page.footer_right }}
-	</aside>
-	{% endif %}
-	{% if page.footer_bottom %}
-	<aside class="footer-bottom">
-	{{ page.footer_bottom }}
-	</aside>
-	{% endif %}
-</footer>
+      {% if page.footer_first or page.footer_second or page.footer_third %}
+        <div id="footer-middle" {{ footer_middle_style }}>
+          <div class="container {{ set_max_site_width ? maximum_width_footer }}">
+        {% if page.footer_first %}
+            {{  page.footer_first  }}
+        {% endif %}
+        {% if page.footer_second %}
+            {{  page.footer_second  }}
+        {% endif %}
+        {% if page.footer_third %}
+            {{ page.footer_third  }}
+        {% endif %}
+        </div></div>
+      {% endif %}
+
+      {% if page.footer_menus %}
+       <div id="footer-menus" {{ footer_menus_style }}>
+          <div class="container {{ set_max_site_width ? maximum_width_footer }}">
+        {{ page.footer_menus }}
+       {% if (social_icons and is_social_footer) %}
+          <section class="footer-social-section">
+      <span class="footer-social-overlap footer-social-connect">
+        CONNECT <span class="footer-social-small">with</span> US
+      </span>
+      <span class="footer-social-overlap footer-social-icons-wrapper">
+        {{ social_icons }}
+      </span>
+  </section>
+   <section class="footer-bottom-section">
+      {% if footer_copy %}
+    <div class="footer-bottom-wrapper">   
+      {{ footer_copy }}
+    </div>
+       {% endif %}
+
+      {% if footer_links %}
+    <div class="footer-bottom-wrapper footer-bottom-menus">
+    {{ footer_links|join(' | ')|raw }}
+    </div>
+       {% endif %}
+  </section>
+       {% endif %}
+        </div>
+      </div>
+      {% endif %}
+    </footer>
+  {% endif %}
 </div>
 {% if display_grid %}
-	TEST
    {{ attach_library('moonshine/display-grid')}}
 {% endif %}
 {% if back_to_top %}

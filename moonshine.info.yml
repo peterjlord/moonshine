@@ -20,11 +20,10 @@ regions:
   help: 'Help'
   content: 'Content'
   sidebar_first: 'Primary'
-	footer_top: 'Footer Top'
+  footer_top: 'Footer Top'
   footer_first: 'Footer First'
   footer_second: 'Footer Second'
   footer_third: 'Fooder Third'
   footer_menus: 'Footer Menus'
-
   page_top: 'Page top'
   page_bottom: 'Page bottom'
