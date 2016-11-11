@@ -48,13 +48,14 @@
 .menu--account, .menu--main {
 	li {
 		&:hover ul {
+			background:$white;
 			@include display(flex);
      	@include flex-direction(column);
-      z-index:2;
+      z-index:20;
 		}
 	}
 }
-.search-block-form {
+header .search-block-form {
   position: relative;
   text-align: right;
   z-index: 4;

@@ -1,0 +1,15 @@
+@import "compass";
+@import "variables";
+
+
+#back-to-top {
+  background-color: $primary;
+  @include border-radius(1em);
+  bottom: 1em;
+  color: #ffffff;
+  padding: 0.2em;
+  position: fixed;
+  right: 1em;
+  z-index:100000;
+  text-decoration: none;
+}

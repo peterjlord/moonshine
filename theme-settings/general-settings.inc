@@ -5,10 +5,9 @@ function moonshine_form_settings_general(&$form, $theme) {
     '#title' => t('General'),
 		'#weight' => -100,
   );
-  $form['general']['container'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Container'),
-    '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
+	$form['general']['moonshine_back_to_top'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show Back to Top Arrow'),
+    '#default_value' => _moonshine_setting('back_to_top', $theme),
   );
 }

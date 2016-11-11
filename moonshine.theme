@@ -1,7 +1,9 @@
 <?php
-
+	use Drupal\Component\Utility\SafeMarkup;
 	use Drupal\Core\Url;
+	use Drupal\Core\Link;
 	use Drupal\Core\Template\Attribute;
+
 
 	include_once(drupal_get_path('theme', 'moonshine') . '/includes/functions.inc');
 
@@ -49,6 +51,9 @@ function moonshine_page_attachments_alter(array &$page) {
  * Implements hook_preprocess_page() for page.html.twig.
  */
 function moonshine_preprocess_page(array &$variables) {
+	$theme = \Drupal::theme()->getActiveTheme()->getName();
+
+	moonshine_backtotop($variables, $theme);
 	if (isset($variables['node'])) {
 		/*
     $node = $variables['node'];
@@ -213,3 +218,10 @@ function moonshine_form_search_block_form_alter(&$form, \Drupal\Core\Form\FormSt
 	$form['actions']['submit']['#type'] =  'image_button';
 	$form['actions']['submit']['#src'] =  drupal_get_path('theme', 'moonshine') . '/images/svg-inuse/135-search.svg'; 
 }
+function moonshine_backtotop(&$variables, $theme) {
+  $top = _moonshine_setting('back_to_top', $theme);
+	if(_moonshine_setting('back_to_top', $theme)) {
+    $variables['back_to_top'] = Url::fromRoute('<current>', array(), array('absolute' => TRUE, 'fragment'=> 'header-top'))->toString();
+	}
+}
+

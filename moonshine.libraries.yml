@@ -6,3 +6,11 @@ global-styling:
   js:
     js/jquery.searchbox.js: {}
 
+back-to-top:
+  js:
+    js/jquery.back-to-top.js : {}
+  css:
+    theme:
+      css/lib/back-to-top.css: {}
+
+
