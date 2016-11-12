@@ -57,4 +57,31 @@ $breadcrumb-color: $medium-gray;
 $breadcrumb-color-hover: $action-color;
 $breadcrumb-color-active: $breadcrumb-color;
 
+$x_small:360px;
+$small:480px;
+$medium:600px;
+$large:768px;
+$x_large:1080px;
+$xx_large:1240px;
+
+
+$breakpoints: (
+  xs: $x_small,
+  s: $small,
+  m: $medium ,
+  l:$large,
+  xl:$x_large,
+  xll:$xx_large
+);
+// Our function for shorter usage of map-get();
+@function bp($size) {
+  @return map-get($breakpoints, $size);
+}
+// colours
+$primary:#5BBC2E;;
+$secondary:#bc3a2e;
+$white:#ffffff;
+$text:#212121;
+$grey:#d2d2d2;
+$black:#373737;
 

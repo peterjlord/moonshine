@@ -59,7 +59,7 @@
   </aside>
 {% endif %}
  {% if page.footer_top or page.footer_one or page.footer_two or page.footer_three or page.footer_menus %}
-    <footer role="contentinfo">
+    <footer class="footer" role="contentinfo">
      
       {% if page.footer_top %}
       <div id="footer-top" {{ footer_top_style  }}>
@@ -86,9 +86,9 @@
 
       {% if page.footer_menus %}
        <div id="footer-menus" {{ footer_menus_style }}>
-          <div class="container {{ set_max_site_width ? maximum_width_footer }}">
+          <div class="pagewidth container {{ set_max_site_width ? maximum_width_footer }}">
         {{ page.footer_menus }}
-       {% if (social_icons and is_social_footer) %}
+       {% if (social_icons) %}
           <section class="footer-social-section">
       <span class="footer-social-overlap footer-social-connect">
         CONNECT <span class="footer-social-small">with</span> US

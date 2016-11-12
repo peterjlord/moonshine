@@ -19,4 +19,66 @@ footer aside.footer-bottom {
   clear:both;
   @include clearfix;
 }
+.region-footer-menus {
+	@include media(bp(xl)) {
+		@include display(flex);
+		@include justify-content(space-around);
+	}
+}
+.footer-social-section {
+	width:100%;
+  position:relative;
+	@include media(bp(xl)) {
+  	margin-top: em(20px);
+	}
+	ul.social-links.flat {
+      font-size: 1.1em;
+    
+	}
+	@include display(flex);
+  @include flex-flow(row wrap);
+  @include align-items(center);
+  @include justify-content(space-around);
+	&::after {
+  	content: "";
+    position: absolute;
+    z-index: 1;
+    top: 25%;
+		@include media(bp(xl)) {
+    	top:50%;
+		}
+    left: 1px;
+    right:-10px;
+    width: calc(100% - 20px);
+	}
+}
+.footer-social-overlap {
+    position: relative;
+    z-index: 2;
+		@include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+}
+.footer-social-connect {
+	@include media(bp(xl)) {
+	}
+}
+.footer-social-icons-wrapper {
+    width: 100%;
+		@include media(bp(xl)) {
+      width: unset;
+    }
+  }
+  .footer-bottom-section {
+		@include media(bp(xl)) {
+			@include display(flex);
+    }
+  }
+  .footer-bottom-menus {
+		@include media(bp(xl)) {
+      text-align:right;
+      margin-right:em(20px);
+      @include flex(1 0 30%);
+    }
+}
 

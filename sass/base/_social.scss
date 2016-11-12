@@ -1,0 +1,21 @@
+// General social
+ul#social-links {
+		@include display(flex);
+    @include justify-content(space-around);
+    font-size: 1.4em;
+    color: white;
+		li {
+      border-radius:100%;
+      width: 2.2em;
+      height: 2.2em;
+      text-align: center;
+
+      // Vertical Centering
+			@include display(flex);
+      @include justify-content(center);
+      @include align-items(center);
+			a {
+        color:white!important;
+			}
+		}
+}

@@ -55,6 +55,8 @@ function moonshine_preprocess_page(array &$variables) {
 
 	moonshine_backtotop($variables, $theme);
 	moonshine_display_grid($variables, $theme);
+	moonshine_preprocess_social($variables);
+	moonshine_footer($variables, $theme);
 	if (isset($variables['node'])) {
 		/*
     $node = $variables['node'];
@@ -230,6 +232,59 @@ function moonshine_display_grid(&$variables, $theme) {
 	if(_moonshine_setting('display_grid', $theme)) {
 		$variables['display_grid'] = TRUE;
 	}	
-
 }
-
+function  moonshine_preprocess_social(&$variables) {
+	$social= _ms_setting('social');
+  if($social) {
+    // Add social media options.
+    $social_options = array(
+    'facebook' => 'facebook',
+    'twitter' => 'twitter',
+    'googleplus' => 'google',
+    'linkedin' => 'linkedIn',
+    'reddit' => 'reddit',
+	);
+  // Loop through each option and create a link if it exists.
+	foreach ($social_options as $class => $option) {
+   	if(isset($social[$option]) && !empty($social[$option])) {
+        $url = \Drupal\Core\Url::fromUri($social[$option]);
+        $options = array(
+          'attributes' => array(
+            'class' => array($class),
+           ),
+         );
+         $url->setOptions($options);
+				$title = SafeMarkup::format('<svg class="' .$class .'">><use xlink:href="#' .$class . '"></use></svg>', array('@text' => 'TEST'));
+         $link = Link::fromTextAndUrl($title, $url);
+         $social_icons[$option] = array(
+            '#markup' => $link->toString(),
+            '#wrapper_attributes' => array(
+              'class' => array(
+                "social-link",
+              ),
+            ),
+         );
+       }
+     }
+    $variables['social_position'] = $social['social_position'];
+   }
+  // Display as item list
+  if (!empty($social_icons)) {
+    $variables['social_icons'] = array(
+      '#theme' => 'item_list',
+      '#items' => $social_icons,
+      '#attributes' => array('id' => 'social-links', 'class' => $social['social_position']),
+     );
+  }
+}
+function moonshine_footer(&$variables, $theme) {
+  $flinks = _ms_setting('footer-links', $theme);
+  $footer_links = [];
+	for ($i = 1; $i < 3; $i++) {
+    $link = ($flinks['link'.$i]);
+    $link_url = ($flinks['link'.$i . '_url']);
+    $footer_links[] = "<a href=\"$link_url\">$link</a>";
+	}
+  $variables['footer_links'] = $footer_links;
+  $variables['footer_copy'] = _ms_setting('footer_copy', $theme);
+}

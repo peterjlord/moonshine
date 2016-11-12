@@ -1,0 +1,122 @@
+
+
+$font-sizes: (
+  hero: em(90px),
+  largest: em(80px),
+  larger: em(60px),
+  large: em(50px),
+  base: em(18px),
+  small: em(16px),
+  smaller: em(14px),
+  smallest: em(8px),
+  tiny: em(6px)
+);
+$line-height: (
+  largest: em(80px),
+  larger: em(60px),
+  large: em(50px),
+  base: em(18px),
+  small: em(16px),
+  smaller: em(14px),
+  smallest: em(8px)
+);
+$letter-spacing: (
+  largest: em(80px),
+  larger: em(60px),
+  large: em(50px),
+  base: em(18px),
+  small: em(16px),
+  smaller: em(14px),
+  smallest: em(8px)
+);
+$z-index:(
+  highest:100000,
+  higher:10000,
+  high:1000,
+  base:100,
+  low:10,
+  lower:0,
+  lowest:-10,
+);
+
+$colorscheme: (
+  primary: (
+    darkest: shade($primary, 20%),
+    darker: shade($primary, 15%),
+    dark: shade($primary, 10%),
+    base: $primary,
+    light: tint($primary, 10%),
+    lighter: tint($primary, 15%),
+    lightest: tint($primary, 20%),
+  ),
+  secondary: (
+    darkest: shade($secondary, 20%),
+    darker: shade($secondary, 15%),
+    dark: shade($secondary, 10%),
+    base: $secondary,
+    light:tint($secondary, 10%),
+    lighter:tint($secondary, 15%),
+    lightest:tint($secondary, 20%),
+  ),
+  white: (
+    base: $white,
+    light:tint($white, 20%),
+    dark: shade($white, 20%),
+    darkest: shade($white, 20%),
+  ),
+  black: (
+    base: $black,
+    light:tint($black, 20%),
+    dark: shade($black, 20%),
+    darkest: shade($black, 20%),
+  ),
+  grey: (
+    base: $grey,
+    light:lighten($grey, 10%),
+    lightest:lighten($grey, 20%),
+    dark: shade($grey, 20%),
+    darkest: shade($grey, 20%),
+  ),
+  text: (
+    darkest: shade($text, 20%),
+    darker: shade($text, 15%),
+    dark: shade($text, 10%),
+    base: $text,
+    light:tint($text, 10%),
+    lighter:tint($text, 15%),
+    lightest:tint($text, 20%),
+  ),
+  breadcrumb: (
+    base: #f0f0f0,
+    light:tint(#f0f0f0, 5%),
+  )
+);
+$socialColours: (
+  twitter: #00aced,
+  facebook: #3b5998,
+  googleplus: #dd4b39,
+  linkedin: #007bb6,
+  reddit: #5f99cf,
+  youtube: #cd201f,
+);
+
+// Our function for shorter usage of map-get();
+@function social-color($network) {
+  @return map-get($socialColours, $network);
+}
+
+@function colour($scheme, $tone: base) {
+  @return map-get(map-get($colorscheme, $scheme), $tone);
+}
+
+
+/*******************
+h1{
+  font-size:font-size(larger);
+  margin-top: em(10px);
+  background:scolour(primary, darkest);
+  a{
+    color:scolour(white);
+  }
+}
+********************************************/
