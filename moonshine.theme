@@ -273,7 +273,7 @@ function  moonshine_preprocess_social(&$variables) {
     $variables['social_icons'] = array(
       '#theme' => 'item_list',
       '#items' => $social_icons,
-      '#attributes' => array('id' => 'social-links', 'class' => $social['social_position']),
+      '#attributes' => array('id' => 'social-links', 'class' => 'social-links'),
      );
   }
 }

@@ -1,0 +1,22 @@
+@mixin social-background($network) {
+	&.#{$network} {
+		path {
+      fill: social-color($network);;
+		}
+		&:hover {
+			path {
+      	fill:mix(black, social-color($network), 25%);
+			}
+		}
+	}
+}
+ul.social-links {
+	svg {
+		@include social-background(twitter);
+		@include social-background(facebook);
+		@include social-background(googleplus);
+		@include social-background(linkedin);
+		@include social-background(reddit);
+		@include social-background(youtube);
+	}
+}
