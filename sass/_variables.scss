@@ -73,6 +73,12 @@ $breakpoints: (
   xl:$x_large,
   xll:$xx_large
 );
+
+$baseFontSize: 18;
+$baseLineHeight: 1.5;
+$leading: $baseLineHeight * 1rem;
+$scale: 1.114;
+
 // Our function for shorter usage of map-get();
 @function bp($size) {
   @return map-get($breakpoints, $size);
