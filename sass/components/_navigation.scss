@@ -14,14 +14,14 @@ header.header{
 }
 .menu--account  li {
 	.avatar {
-		border:solid $white 4px;
+		//border:solid $white 4px;
 		path {
   		fill: $white;
 		}
 	}
 	&:hover {
 		.avatar {
-    	border:solid $primary 4px;
+    	//border:solid $primary 4px;
 			path {
   			fill: $primary;
 			}

@@ -19,7 +19,6 @@
   <h2>{{ title }}</h2>
 {% endif %}
 
-<div class="L L--nomargin">
 {% for row in rows %}
   {%
     set row_classes = [
@@ -28,9 +27,8 @@
   %}
   {%
     set classes = [
-      'w-12 w-6@m w-4@l ',
+      'view-row',
     ]
   %}
   <div{{ row.attributes.addClass(classes) }}>{{ row.content }} </div>
 {% endfor %}
-</div>

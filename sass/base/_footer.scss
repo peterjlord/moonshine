@@ -76,7 +76,7 @@ footer aside.footer-bottom {
   }
   .footer-bottom-menus {
 		@include media(bp(xl)) {
-      text-align:right;
+      text-align:right!important;
       margin-right:em(20px);
       @include flex(1 0 30%);
     }

@@ -9,16 +9,17 @@
 		@include display(flex);
 	}
 	.avatar {
-		@include border-top-radius(25px);
-		@include border-right-radius(25px);
-		@include border-bottom-radius(25px);
-		@include border-left-radius(25px);
+		//@include border-top-radius(25px);
+		//@include border-right-radius(25px);
+		//@include border-bottom-radius(25px);
+		//@include border-left-radius(25px);
 		max-width: 50px;
 		max-height: 50px;
 		height:$navigation-height;
 		width:$navigation-height;
 		padding:5px;
 		vertical-align: middle;
+		background:red;
 	}
 	li {
 		line-height:$navigation-height;			
@@ -75,11 +76,17 @@ header .search-block-form {
   }
   input[type="image"] {
     margin: 0.333333em 0.75em;
-		height:$navigation-height;
-    width:$navigation-height;
     border:0px;
-		line-height: $navigation-height;
+		background:red;
     vertical-align: middle;
+		max-width: 50px;
+    max-height: 50px;
+    height:$navigation-height;
+    width:$navigation-height;
+    padding:5px;
+    vertical-align: middle;
+    background:red;
+
   }
 }
 // Search Navigation
