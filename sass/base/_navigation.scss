@@ -8,19 +8,6 @@
 	ul.menu {
 		@include display(flex);
 	}
-	.avatar {
-		//@include border-top-radius(25px);
-		//@include border-right-radius(25px);
-		//@include border-bottom-radius(25px);
-		//@include border-left-radius(25px);
-		max-width: 50px;
-		max-height: 50px;
-		height:$navigation-height;
-		width:$navigation-height;
-		padding:5px;
-		vertical-align: middle;
-		background:red;
-	}
 	li {
 		line-height:$navigation-height;			
 		position:relative;
@@ -74,20 +61,24 @@ header .search-block-form {
 		display:none;
     outline: 0;
   }
-  input[type="image"] {
-    margin: 0.333333em 0.75em;
-    border:0px;
-		background:red;
-    vertical-align: middle;
-		max-width: 50px;
+}
+// Icons
+.menu--main, .menu--account, header .search-block-form {
+	.avatar,  input[type="image"] {
+    @include border-top-radius(25px);
+    @include border-right-radius(25px);
+    @include border-bottom-radius(25px);
+    @include border-left-radius(25px);
+    max-width: 50px;
     max-height: 50px;
     height:$navigation-height;
     width:$navigation-height;
     padding:5px;
     vertical-align: middle;
-    background:red;
-
-  }
+	}
+	input[type="image"] {
+    margin: 0.333333em 0.75em;
+	}
 }
 // Search Navigation
 .search-expanded {

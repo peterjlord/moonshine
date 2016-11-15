@@ -29,6 +29,13 @@ header.header{
 		background:$white;
 	}
 }
+// Icons
+.menu--main, .menu--account, header .search-block-form {
+	.avatar,  input[type="image"] {
+		background:colour(primary, darkest);
+	}
+}
+
 // Submenus 
 .menu--account, .menu--main {
 	li {
