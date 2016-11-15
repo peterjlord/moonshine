@@ -20,16 +20,28 @@
 	ul.menu ul {
 		position:	absolute;
 		display:none;
-		right:0px;
 		z-index:2;
 		a {
-			line-height:20px;
+			line-height:em(20px);;
 		}
 		li {
-			line-height:20px;			
+			line-height:em(20px);			
 			white-space: nowrap;
+			margin-top:em(10px);
+			margin-bottom: em(10px);
 			display:block;
+			z-index:10;
 		}
+	}
+}
+.menu--main {
+	ul.menu ul {
+		left:0px;
+	}
+}
+.menu--account {
+	ul.menu ul {
+		right:0px;
 	}
 }
 // Submenus 
@@ -65,10 +77,10 @@ header .search-block-form {
 // Icons
 .menu--main, .menu--account, header .search-block-form {
 	.avatar,  input[type="image"] {
-    @include border-top-radius(25px);
-    @include border-right-radius(25px);
-    @include border-bottom-radius(25px);
-    @include border-left-radius(25px);
+    @include border-top-radius(em(25px));
+    @include border-right-radius(em(25px));
+    @include border-bottom-radius(em(25px);
+    @include border-left-radius(em(25px));
     max-width: 50px;
     max-height: 50px;
     height:$navigation-height;
