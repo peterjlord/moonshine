@@ -9,14 +9,19 @@
 .grid-items {
 	@include fill-parent();
 	@include row(table);
-	vertical-align: top;
+	margin-top:em(10px);
 
-	.grid-item-8 {
+	.grid-item-10 {
 		@include span-columns(8);
+		vertical-align: top;
 	}
-	.grid-item-4 {
+	.grid-item-2 {
 		@include span-columns(4);
 	}
+}
+ul.inline li {
+	padding:0;
+	margin-right:em(5px);
 }
 footer.footer {
 	margin-top:2em;

@@ -4,6 +4,7 @@
   border: 1px solid map-get($options, border-color);
   border-radius: map-get($options, border-radius);
   cursor: pointer;
+	padding:em(4px);
   //font-family: $type-family-title;
 
   &:hover,

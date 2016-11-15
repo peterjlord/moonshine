@@ -100,7 +100,7 @@
 
   {% if display_submitted or content.links %}
   <footer class="grid-items node__meta node-footer">
-    <div{{ author_attributes.addClass('grid-item-8 node__submitted') }}>
+    <div{{ author_attributes.addClass('grid-item-10 node__submitted') }}>
       <div class = "clearfix">
         Submitted by <strong>{{ author_name }}</strong> on <strong>{{ date }}</strong>
       </div>
@@ -113,14 +113,13 @@
     </div>
     
     {% if author_picture %}
-      <div class = "text-right grid-item-4 meta-data-user-picture">
+      <div class = "text-right grid-item-2 meta-data-user-picture">
         {{ author_picture }}
       </div>
     {% endif %}
     
   </footer>
   {% endif %}
-
 </article>
 {% if content.comment %}
   {{ content.comment }}
