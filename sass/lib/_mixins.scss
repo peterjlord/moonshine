@@ -1,0 +1,19 @@
+@mixin core-button($options) {
+  color: map-get($options, color);
+  background-color: map-get($options, background-color);
+  border: 1px solid map-get($options, border-color);
+  border-radius: map-get($options, border-radius);
+  cursor: pointer;
+  //font-family: $type-family-title;
+
+  &:hover,
+  &:focus {
+    background-color: map-get($options, background-hover);
+    border-color: map-get($options, border-color-hover);
+  }
+  &:active,
+  &[aria-selected="true"] {
+    background-color: map-get($options, background-active);
+    border-color: map-get($options, border-color-active);
+  }
+}

@@ -24,7 +24,20 @@ $messages: (
 @import "neat";
 @import "variables";
 @import "maps";
-@import "core/**/*";
+@import "lib/mixins";
+@import "lib/functions";
+$core-buttons: (
+  color:               text-color($white),
+  background-color:    $secondary,
+  border-color:        #b2005c,
+  background-hover:    #dbdbdb,
+  border-color-hover:  #ba0060,
+  background-active:   #c7c7c7,
+  border-color-active: #a60056,
+  border-radius:      0px,
+);
+
+
 @import "base/**/*";
 @import "components/**/*";
 

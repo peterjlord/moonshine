@@ -1,0 +1,6 @@
+
+.node-readmore, .comment-add {
+	a {
+		@include core-button($core-buttons);
+	}
+}

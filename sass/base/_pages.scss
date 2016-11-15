@@ -1,8 +1,22 @@
 .container {
 	margin-top:2em;
 }
-.pagewidth {
+.page-container {
   @include outer-container;
+}
+
+
+.grid-items {
+	@include fill-parent();
+	@include row(table);
+	vertical-align: top;
+
+	.grid-item-8 {
+		@include span-columns(8);
+	}
+	.grid-item-4 {
+		@include span-columns(4);
+	}
 }
 footer.footer {
 	margin-top:2em;

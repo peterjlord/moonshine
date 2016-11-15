@@ -79,7 +79,7 @@ header .search-block-form {
 	.avatar,  input[type="image"] {
     @include border-top-radius(em(25px));
     @include border-right-radius(em(25px));
-    @include border-bottom-radius(em(25px);
+    @include border-bottom-radius(em(25px));
     @include border-left-radius(em(25px));
     max-width: 50px;
     max-height: 50px;

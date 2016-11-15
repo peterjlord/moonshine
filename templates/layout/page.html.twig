@@ -13,9 +13,13 @@
     node.bundle ? 'type' ~ node.bundle|clean_class,
    
 				]
+	
 %}
+	{% set is_fluid = flase%}
+
+	{% set dynamic_container = is_fluid ? 'leadgen-fluid' : 'page-container ' %}
 <header class="header centered-navigation" role="banner" aria-label="{{ 'Site header'|t  }}">
-	<div class="pagewidth centered-navigation-wrapper">
+	<div class="{{dynamic_container}}pagewidth centered-navigation-wrapper">
 	<div class="menu-nav">
 		<a id="nav-open-button" class="nav-button" href="#block-system-main-menu">
 			<svg role="img" class="hmenu"><use xlink:href="#hmenu"></use></svg>
@@ -24,27 +28,13 @@
   {{ page.navigation  }} 
 	</div>
 </header>
-<div class="container">
-{% if page.highlighted %}
-  <aside role="complementary">
-    {{ page.highlighted  }}
-  </aside>
-{% endif %}
-
-{% if page.featured_top %}
-  <aside role="complementary">
-    {{ page.featured_top  }}
-  </aside>
-{% endif %}
-
 <div class="pagewidth">
   {{ page.pre_content  }}
   {{ page.breadcrumb  }}
 </div>
-
-<main class="pagewidth" role="main" id="main">
+<main class="{{dynamic_container}}" role="main" id="main">
   <a id="main-content" tabindex="-1"></a>
-  {{ page.content  }}
+  {{ page.content  }} 
 </main>
 
 {% if page.sidebar_first %}
@@ -116,7 +106,6 @@
       {% endif %}
     </footer>
   {% endif %}
-</div>
 {% if display_grid %}
    {{ attach_library('moonshine/display-grid')}}
 {% endif %}
