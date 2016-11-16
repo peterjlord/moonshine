@@ -15,7 +15,7 @@ input[type=url],
 input[type=email],
 textarea,
 select{
-  @include box-sizing(border-box);
+  //@include box-sizing(border-box); Depricated
   padding: 7px;
   margin:0px;
   @include transition-property(all);

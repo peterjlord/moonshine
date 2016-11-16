@@ -7,19 +7,17 @@
 #}
 
 {%
-				set main_classes = [
+	set main_classes = [
     is_front ? '' : '',
     taxonomy ? '' : '',
     node.bundle ? 'type' ~ node.bundle|clean_class,
-   
-				]
-	
+	]
 %}
-	{% set is_fluid = flase%}
+	{% set is_fluid = true%}
 
-	{% set dynamic_container = is_fluid ? 'leadgen-fluid' : 'page-container ' %}
+	{% set dynamic_container = is_fluid ? 'page-container-fluid ' : 'page-container ' %}
 <header class="header centered-navigation" role="banner" aria-label="{{ 'Site header'|t  }}">
-	<div class="{{dynamic_container}}pagewidth centered-navigation-wrapper">
+	<div class="{{dynamic_container}}centered-navigation-wrapper">
 	<div class="menu-nav">
 		<a id="nav-open-button" class="nav-button" href="#block-system-main-menu">
 			<svg role="img" class="hmenu"><use xlink:href="#hmenu"></use></svg>

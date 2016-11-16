@@ -4,11 +4,17 @@
 .page-container {
   @include outer-container;
 }
-
+header .page-container-fluid {
+  @include outer-container;
+}
+.page-container-fluid .block-page-title-block,
+.page-container-fluid .block-system-breadcrumb-block  {
+  @include outer-container;
+}
 
 .grid-items {
 	@include fill-parent();
-	@include row(table);
+	//@include row(table);
 	margin-top:em(10px);
 
 	.grid-item-10 {
