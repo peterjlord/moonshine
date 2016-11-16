@@ -8,7 +8,12 @@ header .page-container-fluid {
   @include outer-container;
 }
 .page-container-fluid .block-page-title-block,
-.page-container-fluid .block-system-breadcrumb-block  {
+.page-container-fluid .block-local-tasks-block,
+.page-container-fluid .type-text-with-summary,
+.page-container-fluid .block-system-breadcrumb-block,
+.page-container-fluid  footer.node-footer, 
+.page-container-fluid .type--field-field-item 
+  {
   @include outer-container;
 }
 

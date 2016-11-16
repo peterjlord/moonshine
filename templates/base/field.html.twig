@@ -48,10 +48,16 @@ example of all the classes
 
 {# todo set up the right classes we want here and drop the field-[field_type] #}
 {%
-  set classes = [
+					set classes = [
+		'type--field-field-item',
     'type-' ~ field_type|clean_class,
-    field_type == "text_long" ? 'content' : '' ,
-  ]
+    'type--' ~ bundle|clean_class,
+    'type--' ~ view_mode|clean_class,
+    'type--' ~ field_name|clean_class,
+    label_hidden ? 'type--label-false' : 'type--label-true',
+    multiple ? 'type--true' : 'type--multiple-false',
+					]
+
 %}
 {%
   set title_classes = [
@@ -66,6 +72,7 @@ example of all the classes
   multple label shown
   single label shown
 #}
+
 
 {% if label_hidden %}
   {# --Multiple & no label  ------------------------------------------------- #}
