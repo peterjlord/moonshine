@@ -12,8 +12,13 @@ header .page-container-fluid {
 .page-container-fluid .type-text-with-summary,
 .page-container-fluid .block-system-breadcrumb-block,
 .page-container-fluid  footer.node-footer, 
-.page-container-fluid .type--field-field-item 
+.field 
   {
+  @include outer-container;
+}
+.page-container-fluid {
+}
+h2.node-title {
   @include outer-container;
 }
 

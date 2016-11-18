@@ -1,0 +1,30 @@
+.localtask__level_1 ul.tabs-horizontal {
+	background-color: lighten($primary, 10%);
+	height: 2.25em;
+	overflow: hidden;
+	z-index: 10;
+	color: $white;
+	a {
+    color:$white;
+    width:100%;
+    display:inline-block;
+	}
+	position:relative;
+	&.clicked {
+    height: auto;
+	}
+	li {
+	}
+	a {
+		color: $white;
+    padding: 0.5em 0 0.5em 3em;
+	}
+	.toggle-p, .toggle-s {
+    display: block;
+    position: absolute;
+    text-indent: -9999px;
+    width: 36px;
+    height: 2.2em;
+    right: 0.5em;
+	}
+}

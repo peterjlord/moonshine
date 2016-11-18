@@ -5,6 +5,7 @@ global-styling:
       images/svg-symbols.css: {}
   js:
     js/jquery.searchbox.js: {}
+    js/jquery.local-nav.js: {}
 
 back-to-top:
   js:
