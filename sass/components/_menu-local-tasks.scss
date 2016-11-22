@@ -1,4 +1,21 @@
-nav.localtask {
-	li {
-	}
+.localtask__level_1 {
+  margin-bottom: em(10px);
+  ul.tabs-horizontal {
+		background-color: lighten($primary, 10%);
+    svg {
+      path {
+        fill: $white;
+      }
+    }
+    a {
+      color: $white;
+      display:table;
+    }
+    span {
+    }
+    .toggle-p {
+      background:blue;
+    }
+  }
 }
+

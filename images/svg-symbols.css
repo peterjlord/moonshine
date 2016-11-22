@@ -1,9 +1,29 @@
+.pencil {
+  width: 32px;
+  height: 32px;
+}
+
 .avatar {
   width: 32px;
   height: 32px;
 }
 
 .search {
+  width: 32px;
+  height: 32px;
+}
+
+.bug {
+  width: 32px;
+  height: 32px;
+}
+
+.bin {
+  width: 32px;
+  height: 32px;
+}
+
+.tree {
   width: 32px;
   height: 32px;
 }

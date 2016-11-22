@@ -6,6 +6,7 @@ global-styling:
   js:
     js/jquery.searchbox.js: {}
     js/jquery.local-nav.js: {}
+    js/jquery.responsive-classes.js: {}
 
 back-to-top:
   js:

@@ -8,7 +8,7 @@
   };
 	function localnavigation(context) {
 		$(".tabs-horizontal").addClass('js');
-		$("ul.tabs-horizontal li:first-child").prepend( "<span class='toggle-p'>Toggle</span>"   );
+		$("ul.tabs-horizontal li:first-child").prepend( '<span class="toggle-p"></span>'   );
 		$(".toggle-p").click(function() {
       $('.tabs-horizontal.js').toggleClass('clicked')
 		});

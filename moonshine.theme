@@ -202,8 +202,44 @@ function moonshine_theme_suggestions_details_alter(array &$suggestions, array $v
 /**
  * Implements hook_preprocess_menu_local_task().
  */
-function moonshine_preprocess_menu_local_task(array &$variables) {
-  //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
+function moonshine_preprocess_menu_local_task(&$variables) {
+  $link = $variables['element']['#link'];
+  $link += array(
+    'localized_options' => array(),
+  );
+
+	$svg = moonshine_preprocess_menu_local_task_svg($variables['element']['#link']['url']->getRouteName());
+	if($svg) {
+	$svg =<<<EOD
+<svg class="$svg"><use xlink:href="#$svg"></use></svg>
+EOD;
+	} else {
+		$svg = '';
+	}
+	$title = SafeMarkup::format($svg . '<span>@text</span>', array('@text' => $link['title']));
+  $variables['link'] = array(
+    '#type' => 'link',
+    '#title' => $title,
+    '#url' => $link['url'],
+    '#options' => $link['localized_options'],
+  );
+}
+function moonshine_preprocess_menu_local_task_svg($link_name) {
+	// return class names for menus
+	switch($link_name) {
+		case 'entity.node.canonical':
+			return 'search';
+		case 'entity.node.edit_form':
+			return 'pencil';
+		case 'entity.node.delete_form':
+			return 'bin';
+		case 'entity.node.devel_load':
+			return 'bug';
+		case 'entity.node.version_history':
+			return 'tree';
+		default:
+			return false;
+	}
 }
 /**
  * Implements hook_preprocess_menu().
@@ -254,7 +290,7 @@ function  moonshine_preprocess_social(&$variables) {
            ),
          );
          $url->setOptions($options);
-				$title = SafeMarkup::format('<svg class="' .$class .'">><use xlink:href="#' .$class . '"></use></svg>', array('@text' => 'TEST'));
+				$title = SafeMarkup::format('<svg class="' .$class .'"><use xlink:href="#' .$class . '"></use></svg>', array('@text' => ''));
          $link = Link::fromTextAndUrl($title, $url);
          $social_icons[$option] = array(
             '#markup' => $link->toString(),
