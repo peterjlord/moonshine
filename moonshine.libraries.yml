@@ -7,6 +7,12 @@ global-styling:
     js/jquery.searchbox.js: {}
     js/jquery.local-nav.js: {}
     js/jquery.responsive-classes.js: {}
+  dependencies:
+    - core/matchmedia
+    - core/jquery
+    - core/drupal
+    - core/jquery.once
+    - core/drupal.debounce
 
 back-to-top:
   js:

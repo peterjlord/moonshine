@@ -8,10 +8,13 @@
   };
 	function localnavigation(context) {
 		$(".tabs-horizontal").addClass('js');
-		$("ul.tabs-horizontal li:first-child").prepend( '<span class="toggle-p"></span>'   );
-		$(".toggle-p").click(function() {
+		$("ul.tabs-horizontal li:first-child").before( '<li class="first"></li>');
+		$("ul.tabs-horizontal li.is-active a").click( function (event) {
+			event.preventDefault();
       $('.tabs-horizontal.js').toggleClass('clicked')
-		});
+			}).dblclick(function() {
+    		window.location.replace($(this).attr("href"));
+			});;
 	}
 })(jQuery);
 

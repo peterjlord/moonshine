@@ -1,6 +1,7 @@
 <?php
 	use Drupal\Component\Utility\SafeMarkup;
 	use Drupal\Core\Url;
+	use Drupal\node\NodeInterface;
 	use Drupal\Core\Link;
 	use Drupal\Core\Template\Attribute;
 
@@ -53,10 +54,17 @@ function moonshine_page_attachments_alter(array &$page) {
 function moonshine_preprocess_page(array &$variables) {
 	$theme = \Drupal::theme()->getActiveTheme()->getName();
 
+	$variables['svg'] = drupal_get_path('theme', 'moonshine') . '/images/svg-symbols.svg';
 	moonshine_backtotop($variables, $theme);
 	moonshine_display_grid($variables, $theme);
 	moonshine_preprocess_social($variables);
 	moonshine_footer($variables, $theme);
+	if (!empty($variables['node'])) {
+    $node = $variables['node'];
+		if (moonshine_layouts_is_fluid($node)) {
+      $variables['is_fluid'] = true;
+		}
+	}
 	if (isset($variables['node'])) {
 		/*
     $node = $variables['node'];
@@ -226,17 +234,29 @@ EOD;
 }
 function moonshine_preprocess_menu_local_task_svg($link_name) {
 	// return class names for menus
+	//ksm($link_name);
 	switch($link_name) {
 		case 'entity.node.canonical':
+		case 'entity.user.canonical':
 			return 'search';
 		case 'entity.node.edit_form':
+		case 'entity.user.edit_form':
 			return 'pencil';
 		case 'entity.node.delete_form':
 			return 'bin';
 		case 'entity.node.devel_load':
+		case 'entity.user.devel_load':
 			return 'bug';
 		case 'entity.node.version_history':
 			return 'tree';
+		case 'user.login':
+			return 'usercheck';
+		case 'user.register':
+			return 'userplus';
+		case 'user.pass':
+			return 'key';
+		case 'shortcut.set_switch':
+			return 'wrench';
 		default:
 			return false;
 	}
@@ -333,4 +353,32 @@ function moonshine_preprocess_paragraph__banner(&$variables) {
     $variables['attributes']['class'][] = 'parallax';
     $variables['attributes']['style'][] = 'background-image: url("' . $image . '");';
 	}
+}
+/**
+ * Check if current node is using the fluid layout.
+ *
+ * @param \Drupal\node\NodeInterface $node
+ * @return \Drupal\node\NodeInterface|null
+ */
+function moonshine_layouts_is_fluid(NodeInterface $node) {
+	// Make sure we're on the node page.
+  if (node_is_page($node)) {
+		return $node;
+		/*
+    $entity_display = Ds::getDisplay('node', $node->bundle(), 'full');
+    if ($entity_display && $ds_layout_settings = $entity_display->getThirdPartySetting('ds', 'layout')) {
+      try {
+        // Get layout plugin.
+        $layout = Layout::layoutPluginManager()->getDefinition($ds_layout_settings['id']);
+        if (!empty($layout['category']) && $layout['category'] == LEADGEN_LAYOUT_FLUID) {
+          return $node;
+        }
+      }
+      catch (PluginException $e) {
+        watchdog_exception('leadgen_layout', $e);
+      }
+    }
+		*/
+  }
+  return NULL;
 }

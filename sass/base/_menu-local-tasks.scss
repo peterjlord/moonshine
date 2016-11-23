@@ -7,6 +7,9 @@
 		position:relative;
 		@include display(flex);
 		@include flex-direction(column);
+		@include media(bp(xl)) {
+			@include flex-direction(row);
+		}
 		li.is-active{
 			@include order(-2);
 		}
@@ -27,17 +30,6 @@
 			display:table-cell;
 			width:100%;
 			vertical-align: middle;
-			
-		}
-		.toggle-p {
-    	display: block;
-    	position: absolute;
-			cursor:pointer;
-    	text-indent: -9999px;
-    	width: 40px;
-    	height: 2.2em;
-    	right: 0.5em;
-			background:red;
 		}
 	}
 }

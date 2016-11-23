@@ -13,7 +13,7 @@
     node.bundle ? 'type' ~ node.bundle|clean_class,
 	]
 %}
-	{% set is_fluid = true%}
+	{#% set is_fluid = true%#}
 
 	{% set dynamic_container = is_fluid ? 'page-container-fluid ' : 'page-container ' %}
 <header class="header centered-navigation" role="banner" aria-label="{{ 'Site header'|t  }}">
