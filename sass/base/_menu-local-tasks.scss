@@ -5,10 +5,13 @@
 		overflow: hidden;
 		z-index: 10;
 		position:relative;
-		@include display(flex);
-		@include flex-direction(column);
-		@include media(bp(xl)) {
-			@include flex-direction(row);
+		@include media(bp(l)) {
+			@include display(flex);
+			@include align-items(stretch);
+		}
+		li:not(.first) {
+			 /*height: 50px;*/
+			 @include flex(1);
 		}
 		li.is-active{
 			@include order(-2);
@@ -25,6 +28,7 @@
 		a {
 			//color: $white;
 			display:table;
+			padding:0 em(10px) 0 0;
 		}
 		span {
 			display:table-cell;

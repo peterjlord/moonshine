@@ -7,9 +7,18 @@
         fill: $white;
       }
     }
+		li.is-active a {
+			background:colour(primary, darkest);
+		}
     a {
       color: $white;
       display:table;
+			background-color: lighten($primary, 10%);
+			@include transition(background-color 0.2s);
+			&:hover {
+				background:colour(primary, darkest);
+				@include transition(background-color 0.2s);
+			}
     }
     span {
     }
