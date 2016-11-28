@@ -5,17 +5,22 @@
 		overflow: hidden;
 		z-index: 10;
 		position:relative;
+		@include display(flex);
+		 @include flex-direction(column);
 		@include media(bp(l)) {
-			@include display(flex);
+		 	@include flex-direction(row);
 			@include align-items(stretch);
 		}
 		li:not(.first) {
 			 /*height: 50px;*/
 			 @include flex(1);
 		}
-		li.is-active{
-			@include order(-2);
-		}
+		li.is-active {
+			@include order(-9);
+			@include media(bp(l)) {
+				@include order(0);
+			}
+		}	
 		&.clicked {
     	height: auto;
 		}

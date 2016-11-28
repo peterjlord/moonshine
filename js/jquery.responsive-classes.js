@@ -19,16 +19,17 @@
 	function responsive_set_classes() {
 		var current_width = $(window).width();
 		
-		if(current_width < 481)
+		if(current_width < 481) {
       $('html').addClass("m320").removeClass("m768").removeClass("desktop").removeClass("m480");
-
-    else if(current_width < 739)
+		}
+		else if(current_width < 739) {
       $('html').addClass("m768").removeClass("desktop").removeClass("m320").removeClass("tablet");
-
-    else if (current_width < 970)
+		}
+		else if (current_width < 970) {
       $('html').addClass("tablet").removeClass("desktop").removeClass("m320").removeClass("m768");
-
-    else (current_width > 971)
-      $('html').addClass("desktop").removeClass("m320").removeClass("m768").removeClass("tablet");
+		}
+		else if (current_width > 971) {
+			$('html').addClass("desktop").removeClass("m320").removeClass("m768").removeClass("tablet");
+		}
 	}
 })(jQuery);
