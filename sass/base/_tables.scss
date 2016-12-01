@@ -1,0 +1,99 @@
+/**
+ * @file
+ * Seven styles for Tables.
+ */
+
+table {
+  width: 100%;
+  margin: 0 0 10px;
+}
+caption {
+  text-align: left; /* LTR */
+}
+[dir="rtl"] caption {
+  text-align: right;
+}
+th {
+  text-align: left; /* LTR */
+  padding: 10px 12px;
+}
+[dir="rtl"] th {
+  text-align: right;
+}
+tr {
+  padding: 0.1em 0.6em;
+}
+td,
+th {
+  vertical-align: middle;
+}
+td {
+  padding: 10px 12px;
+  text-align: left; /* LTR */
+}
+[dir="rtl"] td {
+  text-align: right;
+}
+th > a {
+  position: relative;
+  display: block;
+}
+
+/* 1. Must match negative bottom padding of the parent <th> */
+th > a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -10px; /* 1. */
+  left: 0;
+  right: 0;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+th.is-active img {
+  position: absolute;
+  right: 0; /* LTR */
+  top: 50%;
+}
+[dir="rtl"] th.is-active img {
+  right: auto;
+  left: 0;
+}
+td .item-list ul {
+  margin: 0;
+}
+/* This is required to win over specificity of [dir="rtl"] .item-list ul */
+[dir="rtl"] td .item-list ul {
+  margin: 0;
+}
+/* Force browsers to calculate the width of a 'select all' <th> element. */
+th.select-all {
+  width: 1px;
+}
+
+/**
+ * Captions.
+ */
+.caption {
+  margin-bottom: 1.2em;
+}
+
+/**
+ * Responsive tables.
+ */
+@media screen and (max-width: 37.5em) { /* 600px */
+  th.priority-low,
+  td.priority-low,
+  th.priority-medium,
+  td.priority-medium {
+    display: none;
+  }
+}
+@media screen and (max-width: 60em) { /* 920px */
+  th.priority-low,
+  td.priority-low {
+    display: none;
+  }
+}

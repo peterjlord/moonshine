@@ -1,0 +1,97 @@
+fieldset:not(.fieldgroup) {
+  background-color: #fcfcfa;
+  border-radius: 0px;
+}
+.form-disabled label {
+  color: #737373;
+}
+.form-disabled input.form-text,
+.form-disabled input.form-tel,
+.form-disabled input.form-email,
+.form-disabled input.form-url,
+.form-disabled input.form-search,
+.form-disabled input.form-number,
+.form-disabled input.form-color,
+.form-disabled input.form-file,
+.form-disabled textarea.form-textarea,
+.form-disabled select.form-select {
+  border-color: #d4d4d4;
+  background-color: hsla(0, 0%, 0%, .08);
+  box-shadow: none;
+}
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+  border-width: 1px;
+  border-color: #e62600;
+  background-color: hsla(15, 75%, 97%, 1);
+  box-shadow: inset 0 5px 5px -5px #b8b8b8;
+  color: #a51b00;
+}
+.form-item textarea.error + .cke {
+  border-width: 1px;
+  border-color: #e62600;
+}
+.form-item input.error:focus,
+.form-item textarea.error:focus,
+  .form-item select.error:focus {
+  border-color: #e62600;
+  outline: 0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05), 0 0 8px 1px #e62600;
+  background-color: #fcf4f2;
+}
+.form-item input.error:focus,
+.form-item textarea.error:focus,
+.form-item select.error:focus {
+  border-color: colour(primary);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05), 0 0 8px 1px #e62600;
+  background-color: #fcf4f2;
+}
+.form-item--error-message {
+  margin-top: 0.15em;
+  color: #e32700;
+}
+.fieldset-wrapper > .form-item--error-message {
+  margin-top: 0;
+}
+.text-format-wrapper .form-item--error-message {
+  border: solid #ccc;
+  border-width: 0 1px;
+}
+input.form-autocomplete,
+input.form-text,
+input.form-tel,
+input.form-email,
+input.form-url,
+input.form-search,
+input.form-number,
+input.form-color,
+input.form-file,
+input.form-date,
+input.form-time,
+textarea.form-textarea {
+  padding: .3em .4em .3em .5em; /* LTR */
+  border: 1px solid colour(secondary);
+  background: #fff;
+  color: #333;
+  background: #fcfcfa;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .125);
+  color: #595959;
+  @include transition(border linear 0.2s, box-shadow linear 0.2s);
+}
+.form-text:focus,
+.form-tel:focus,
+.form-email:focus,
+.form-url:focus,
+.form-search:focus,
+.form-number:focus,
+.form-color:focus,
+.form-file:focus,
+.form-textarea:focus,
+.form-date:focus,
+.form-time:focus {
+  border-color: colour(primary, darkest);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05), 0 0 8px colour(primary);
+  background-color: #fff;
+}
+
