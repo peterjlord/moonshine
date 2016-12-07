@@ -39,8 +39,8 @@
 {%
   set classes = [
   'pagewidth',
-  '_paragraph--type-' ~ paragraph.bundle|clean_class,
-  view_mode ? '_paragraph--view-mode--' ~ view_mode|clean_class,
+  'paragraph--type-' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
 

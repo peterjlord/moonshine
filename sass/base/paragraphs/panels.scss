@@ -1,0 +1,36 @@
+.paragraph--type-sliding-panels {
+	width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: $overlayColour;
+  pointer-events: none;
+}
+.paragraphs-panels--container {
+	@include display(flex);
+	@include align-items(center);
+	@include flex-direction(column);
+	@include media(bp(l)) {
+		@include flex-direction(row);
+	}
+	height: 100%;
+}
+.paragraphs-panel {
+	width: 100%;
+	height:300px;
+	@include media(bp(l)) {
+		@include flex-direction(row);
+		height:500px;
+	}
+}
+.paragraphs-panel--content {
+	background: center center no-repeat;
+  background-size: cover;
+	height:100%;
+	@include align-items(center);
+	@include display(flex);
+	@include justify-content(center);
+}
+.paragraphs-panel--title {
+	pointer-events: auto;
+	z-index: 10;
+}

@@ -1,0 +1,42 @@
+@import 'https://fonts.googleapis.com/css?family=Oswald';
+
+.paragraphs-panel--title {
+	color: $textColour;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+	font-size: 1.5em;
+  letter-spacing: 0.1em;
+	position: relative;
+	@include transform(scale(0.9));
+	@include  transition(all $duration $ease);
+	@include transition-property(color, transform);
+	&:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: $overlayColour;
+		background: rgba(0, 0, 0, 0.7);
+    border: solid 2px $borderColour;
+    z-index: -1;
+    padding: 0.5em 1em;
+    margin: -0.5em -1em;
+    
+    opacity: 0;
+		@include transform(scale(0.9));
+		@include transition(all $duration $ease);
+		@include transition-property(opacity, transform);
+  }
+	@include media(bp(l)) {
+  	font-size: 2.5em;
+	}
+}
+.paragraphs-panel:hover {
+	.paragraphs-panel--title {
+		color: #ffc12d;
+		@include transform(scale(1.1));
+		&:before {
+			opacity:1;
+			@include transform(scale(1));
+		}
+	}
+}

@@ -361,7 +361,6 @@ function  moonshine_preprocess_social(&$variables) {
          );
        }
      }
-    $variables['social_position'] = $social['social_position'];
    }
   // Display as item list
   if (!empty($social_icons)) {
@@ -392,6 +391,14 @@ function moonshine_preprocess_paragraph__banner(&$variables) {
     $variables['attributes']['class'][] = 'parallax';
     $variables['attributes']['style'][] = 'background-image: url("' . $image . '");';
 	}
+}
+function moonshine_preprocess_paragraph__sliding_panels(&$variables) {
+  $paragraph = $variables['paragraph'];
+}
+function moonshine_preprocess_paragraph__panel(&$variables) {
+  $paragraph = $variables['paragraph'];
+  $variables['url'] = $paragraph->field_image->entity->url();
+  $variables['title'] = $paragraph->field_title->value;
 }
 /**
  * Check if current node is using the fluid layout.

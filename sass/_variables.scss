@@ -91,3 +91,18 @@ $text:#212121;
 $grey:#d2d2d2;
 $black:#373737;
 
+
+
+// Paragraph Slides 
+$duration: 1s;
+$ease: cubic-bezier(.6,.0,.2,1);
+$offsetSize: 10%;
+$contentOffset: $offsetSize * 1.4;
+/* @offsetSize * 2 means the content won't appear to move at all. Set to
+ * a lower value for squishing effects. */
+
+$textColour: #FFF;
+$overlayColour: #000;
+$highlightColour: #FFC12D;
+$borderColour: $highlightColour;
+

@@ -1,0 +1,13 @@
+{%
+  set classes = [
+  'pagewidth',
+  'paragraphs--type-' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraphs--view-mode--' ~ view_mode|clean_class,
+]
+%}
+
+<a href="{{url('entity.node.canonical', {'node': paragraph.field_link_to[0].entity.id})}}" class="paragraphs-panel">
+  <div class="paragraphs-panel--content" style="background-image:url( {{url}} )">
+    <h3 class="paragraphs-panel--title">{{title}}</h3>
+  </div>
+</a>
