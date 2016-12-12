@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var compass = require('gulp-compass');
 var shell   = require('gulp-shell');
 var svgSymbols = require('gulp-svg-symbols');
+var livereload = require('gulp-livereload');
 
 
 gulp.task('compass', function() {
@@ -14,7 +15,8 @@ gulp.task('compass', function() {
       sass: 'sass'
       }))
      .on('error',console.log.bind(console)) //Error handling and 
-    .pipe(gulp.dest('css'));
+    .pipe(gulp.dest('css'))
+		 .pipe(livereload());
 });
 
 gulp.task('clearcache', function() {
@@ -45,6 +47,7 @@ gulp.task('icons', function () {
 });
 
 gulp.task('watch', function () {
+	livereload.listen();
   gulp.watch(['sass/*.scss', 'sass/**/*.scss', 'images/svg-inuse/*.svg'], ['compass', 'icons']);
 });
 

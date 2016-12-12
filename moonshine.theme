@@ -386,6 +386,7 @@ function moonshine_footer(&$variables, $theme) {
 
 function moonshine_preprocess_paragraph__banner(&$variables) {
   $paragraph = $variables['paragraph'];
+	$variables['colours'] = $paragraph->field_colours->getString();
 	if (!$paragraph->field_image->isEmpty()) {
     $image = $paragraph->field_image->entity->url();
     $variables['attributes']['class'][] = 'parallax';

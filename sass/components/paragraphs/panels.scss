@@ -16,7 +16,7 @@
     top: 0; right: 0; bottom: 0; left: 0;
     background: $overlayColour;
 		background: rgba(0, 0, 0, 0.7);
-    border: solid 2px $borderColour;
+    border: solid 2px colour(primary, darkest);
     z-index: -1;
     padding: 0.5em 1em;
     margin: -0.5em -1em;
@@ -30,13 +30,39 @@
   	font-size: 2.5em;
 	}
 }
-.paragraphs-panel:hover {
-	.paragraphs-panel--title {
-		color: #ffc12d;
-		@include transform(scale(1.1));
-		&:before {
-			opacity:1;
-			@include transform(scale(1));
+.paragraphs-panel--content {
+	position:relative;
+  &:before { 
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: $overlayColour;
+		@include opacity(0.2);
+		@include transition($duration $ease);
+   }
+}
+.paragraphs-panel{
+	&:hover   {
+		z-index: 2;
+		.paragraphs-panel--title {
+			color: colour(primary, darkest);
+			@include transform(scale(1.1));
+			&:before {
+				@include opacity(1.0);
+				@include transform(scale(1));
+			}
 		}
+		.paragraphs-panel--content {
+			&:before {
+				@include opacity(0.0);
+			}
+		}	
+	}
+	&:not(:hover) {
+		.paragraphs-panel--content {
+			&:before {
+				@include opacity(0.5);
+			}
+		}	
 	}
 }

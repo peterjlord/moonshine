@@ -1,0 +1,42 @@
+.read-more-links {
+  margin-bottom: 23px;
+  margin-top: 39px;
+  position: relative;
+	h5 {
+    left: 9px;
+    padding: 0 9px;
+    position: absolute;
+    top: -15px;
+		&:before {
+    	content: '';
+    	height: 27px;
+    	left: -28px;
+    	position: absolute;
+    	top: 1px;
+    	width: 27px;
+		}
+	}
+	ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 8px 0 0;
+	}
+	li {
+    margin: 0;
+    padding: 17px 24px;
+	}
+	a {
+		display:block;
+    position: relative;
+		&:before {
+    	content: ' ';
+    	display: inline-block;
+    	height: 0;
+    	left: -12px;
+    	line-height: 0;
+    	position: absolute;
+    	top: 6px;
+    	width: 0;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+<?php
+
+$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
+
+$config['system.performance']['css']['preprocess'] = FALSE;
+$config['system.performance']['js']['preprocess'] = FALSE;
+
+$settings['cache']['bins']['render'] = 'cache.backend.null';
+$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
+require_once DRUPAL_ROOT . '/modules/contrib/devel/kint/kint/Kint.class.php';
+Kint::$maxLevels = 4;
+//Kint::$maxLevels=4;
+

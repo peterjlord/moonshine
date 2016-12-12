@@ -39,25 +39,18 @@ $core-buttons: (
   border-color-active: #a60056,
   border-radius:      0px,
 );
-
+*,
+*:after,
+*:before {
+	@include box-sizing(border-box);
+}
 
 @import "base/**/*";
 @import "components/**/*";
 @import "reset";
 @import "typography";
 
-
-
 // Enter Neat
 .menu-nav {
 	display:none;
-}
-.parallax {
-	/* Set a specific height */
-  height: 500px; 
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
