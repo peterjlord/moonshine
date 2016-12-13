@@ -7,12 +7,20 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.field--name-field-content {
+}
 .paragraph--type-banner {
 	.paragraph--type-content {
+		min-height:350px;
+		height:100%;
 		@include display(flex);
-  	@include align-items(center);
   	@include flex-direction(column);
-	}
-	.field--name-field-text {
+  	@include justify-content(space-around);
+		height:100%;
+		h2, .field--name-field-text {
+			p {
+				margin-bottom:em(20px);
+			}
+		}
 	}
 }

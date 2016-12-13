@@ -37,7 +37,7 @@
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
     background: $overlayColour;
-		@include opacity(0.2);
+		@include opacity(0.7);
 		@include transition($duration $ease);
    }
 }
@@ -46,13 +46,16 @@
 		z-index: 2;
 		.paragraphs-panel--title {
 			color: colour(primary, darkest);
-			@include transform(scale(1.1));
+			//@include transform(scale(1.1));
 			&:before {
 				@include opacity(1.0);
 				@include transform(scale(1));
 			}
 		}
 		.paragraphs-panel--content {
+			//width:110%!important;
+			@include transform(scaleX(1.1));
+			transition: transform $duration $ease;
 			&:before {
 				@include opacity(0.0);
 			}
@@ -61,7 +64,7 @@
 	&:not(:hover) {
 		.paragraphs-panel--content {
 			&:before {
-				@include opacity(0.5);
+				@include opacity(0.7);
 			}
 		}	
 	}
