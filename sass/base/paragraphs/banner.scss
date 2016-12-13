@@ -1,6 +1,6 @@
 .parallax {
-  /* Set a specific height */
-  //height: 500px;
+	min-height:350px;
+
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
@@ -8,11 +8,11 @@
   background-size: cover;
 }
 .paragraph--type-banner {
+	.paragraph--type-content {
+		@include display(flex);
+  	@include align-items(center);
+  	@include flex-direction(column);
+	}
 	.field--name-field-text {
-		//background:yellow;
-		//@include jagged(ccc, 16, top, fill, inside);
-		//background-color: transparent;
-  	//padding: 20px;
-		//margin-bottom:40px;
 	}
 }

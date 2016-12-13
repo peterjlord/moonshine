@@ -1,0 +1,38 @@
+// Quotations 
+blockquote.paragraph--type--quotation {
+  position:relative;
+  padding:em(10px);
+
+	@include media(bp(m)) {
+    padding:em(24px);
+  }
+  .field--name-field-quote {
+    font-size: em(20px);
+    line-height: em(20px);
+		@include media(bp(m)) {
+      font-size: em(28px);
+      line-height: em(20px);
+    }
+  }
+  .field--name-field-quoted-by {
+    font-size: em(12px);
+		@include media(bp(m)) {
+      font-size: em(14px);
+    }
+  }
+  span {
+    position:absolute;
+    display:inline-block;
+    font-size:em(18px);
+		@include media(bp(m)) {
+      font-size: em(28px);
+    }
+    &.icon-quotes-left {
+      top:-10px;
+    }
+    &.icon-quotes-right {
+      bottom:-10px;
+    }
+  }
+}
+

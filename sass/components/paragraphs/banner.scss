@@ -1,8 +1,16 @@
 .paragraph--type-banner {
 	.paragraph--type-content {
-		padding:em(50px);
 	}
   h2 {
+		text-align:center;
+   font-size: 2.4rem;
+   color: gold;
+   text-shadow:
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+
   }
   .field--name-field-text {
   }

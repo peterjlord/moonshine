@@ -384,6 +384,14 @@ function moonshine_footer(&$variables, $theme) {
 }
 
 
+function moonshine_preprocess_paragraph__quotation(&$variables) {
+  $paragraph = $variables['paragraph'];
+	if(!$paragraph->field_single_link->isEmpty()) {
+		// Url
+		$variables['url']  = $paragraph->get('field_single_link')->first()->getUrl();
+		$variables['has_link'] = TRUE;
+	}
+}
 function moonshine_preprocess_paragraph__banner(&$variables) {
   $paragraph = $variables['paragraph'];
 	$variables['colours'] = $paragraph->field_colours->getString();

@@ -1,0 +1,17 @@
+{%
+set classes = [
+	'field-container',
+	'paragraph',
+	'paragraph--type--' ~ paragraph.bundle|clean_class,
+	view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+]
+%}
+<blockquote{{ attributes.addClass(classes) }}>
+	 <svg role="img" class="quotesleft"><use xlink:href="#quotesleft"></use></svg>
+		{% if has_link == true %}
+    <a href="{{ url }}">{{ content }}</a>
+		{% else %}
+    {{ content }}
+		{% endif %}	
+	 <svg role="img" class="quotesright"><use xlink:href="#quotesright"></use></svg>
+</blockquote>

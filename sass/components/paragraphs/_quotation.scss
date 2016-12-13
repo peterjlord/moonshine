@@ -1,0 +1,18 @@
+.field--name-field-quote {
+  blockquote {
+  }
+}
+blockquote.paragraph--type--quotation {
+  border-left:solid $primary em(8px);
+  border-bottom:dotted $primary;
+  background: colour(grey, light);
+  transition: background-color 300ms ease-out;
+  &:hover {
+    background: colour(grey);
+  }
+  span {
+    font-size: em(22px);
+    color: colour(grey, darkest);
+  }
+}
+
