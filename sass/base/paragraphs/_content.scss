@@ -1,0 +1,17 @@
+.paragraph--type--content-with-image {
+	@include display(flex);
+  @include flex-direction(row-reverse);
+  @include justify-content(space-around);
+	&.left {
+		figure {
+			padding:em(0px) em(20px) em(20px) em(0px);
+		}
+	}
+	&.right {
+  	@include flex-direction(row);
+		figure {
+			padding:em(0px) em(0px) em(20px) em(20px);
+		}
+
+	}
+}
